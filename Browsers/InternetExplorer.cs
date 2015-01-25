@@ -18,6 +18,7 @@ namespace FreenetTray.Browsers
                 _version = new Version((string)value);
             }
 
+            // TODO: Also check for existence of executable?
             _isInstalled = _version != null;
         }
 

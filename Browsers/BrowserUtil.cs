@@ -31,8 +31,9 @@ namespace FreenetTray.Browsers
         private static readonly IBrowser[] Browsers = {
             new Chrome(),
             new Firefox(),
-            new InternetExplorer(),
             new Opera(),
+            // All systems should have Internet Explorer, so check it last.
+            new InternetExplorer(),
         };
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();

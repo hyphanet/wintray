@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -50,6 +51,7 @@ namespace FreenetTray
 
         public string WrapperLogFilename { get { return _config.WrapperLogFilename; } }
         public int FProxyPort { get { return _config.FProxyPort; } }
+        public string DownloadsDir { get { return _config.DownloadsDir; } }
 
         public const string WrapperFilename = @"wrapper\freenetwrapper.exe";
         private const string FreenetIniFilename = @"freenet.ini";
@@ -229,6 +231,7 @@ namespace FreenetTray
             public readonly string WrapperLogFilename;
             public readonly int FProxyPort;
             public readonly string RelativeTo;
+            public readonly string DownloadsDir;
 
             public NodeConfig(string relativeTo)
             {
@@ -272,28 +275,43 @@ namespace FreenetTray
 
                 // Read Freenet config: FProxy port TODO: Use ini-parser instead
                 // TODO: Does this need to wait until the node is running for the first run?
-                foreach (var line in File.ReadAllLines(Path.Combine(relativeTo, FreenetIniFilename))
-                    .Where(line => Defines(line, "fproxy.port")))
+                var freenetIniLines = File.ReadAllLines(Path.Combine(relativeTo, FreenetIniFilename));
+
+                var port = RequireValue(freenetIniLines, "fproxy.port");
+                var isValid = int.TryParse(port, out FProxyPort);
+                if (!isValid)
                 {
-                    var isValid = int.TryParse(Value(line), out FProxyPort);
-                    if (!isValid)
-                    {
-                        Log.Error("freenet.ini does not define fproxy.port.");
-                        throw new MissingConfigValueException(FreenetIniFilename, "fproxy.port");
-                    }
-                    break;
+                    Log.Error("fproxy.port is not an integer.");
+                    throw new MissingConfigValueException(FreenetIniFilename, "fproxy.port");
                 }
+
+                DownloadsDir = Path.Combine(RelativeTo,
+                                            RequireValue(freenetIniLines, "node.downloadsDir"));
             }
 
-            private bool Defines(string line, string key)
+            private static bool Defines(string line, string key)
             {
                 // TODO: Does this need to tolerate whitespace between the key and the =? Find an INI library somewhere maybe?
                 return line.StartsWith(key + "=");
             }
 
-            private string Value(string line)
+            private static string Value(string line)
             {
                 return line.Split(new[] { '=' }, 2)[1];
+            }
+
+            private static string RequireValue(IEnumerable<string> lines, string key)
+            {
+                try
+                {
+                    return Value(lines.First(line => Defines(line, key)));
+                }
+                catch (InvalidOperationException)
+                {
+                    // TODO: Resolve config file to full path?
+                    Log.Error("freenet.ini does not define {0}.", key);
+                    throw new MissingConfigValueException(FreenetIniFilename, key);
+                }
             }
         }
     }

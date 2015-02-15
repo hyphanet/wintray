@@ -41,6 +41,7 @@
             this.preferencesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideIconMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.toolStripSeparator2,
             this.startFreenetMenuItem,
             this.stopFreenetMenuItem,
+            this.downloadsMenuItem,
             this.viewLogsMenuItem,
             this.toolStripSeparator1,
             this.preferencesMenuItem,
@@ -117,6 +119,12 @@
             resources.ApplyResources(this.exitMenuItem, "exitMenuItem");
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
             // 
+            // downloadsMenuItem
+            // 
+            this.downloadsMenuItem.Name = "downloadsMenuItem";
+            resources.ApplyResources(this.downloadsMenuItem, "downloadsMenuItem");
+            this.downloadsMenuItem.Click += new System.EventHandler(this.downloadsMenuItem_Click);
+            // 
             // CommandsMenu
             // 
             resources.ApplyResources(this, "$this");
@@ -144,6 +152,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitMenuItem;
         private System.Windows.Forms.ToolStripMenuItem preferencesMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hideIconMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem downloadsMenuItem;
     }
 }
 

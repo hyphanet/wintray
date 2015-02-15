@@ -281,5 +281,10 @@ namespace FreenetTray
         {
             public bool ShowSlow { get; set; }
         }
+
+        private void downloadsMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", _node.DownloadsDir);
+        }
     }
 }

@@ -55,31 +55,27 @@ namespace FreenetTray
              * startup.
              */
 
-            /*
-             * Set the working directory to the executable location to allow looking up relative paths
-             * such as the wrapper. This is useful when launching the application at startup, when its
-             * parent directory is not its working directory.
-             * TODO: Would it be more appropriate to do an explicit relative lookup?
-             */
-            var applicationDir = Directory.GetParent(Application.ExecutablePath);
-            Environment.CurrentDirectory = applicationDir.FullName;
-
-            try
+            while (true)
             {
-                _node = new NodeController();
-            }
-            catch (FileNotFoundException e)
-            {
-                MissingFileExit(e.FileName);
-            }
-            catch (DirectoryNotFoundException e)
-            {
-                // TODO: More appropriate message - how to display?
-                MissingFileExit(e.Message);
-            }
-            catch (NodeController.MissingConfigValueException e)
-            {
-                MissingConfigExit(e.Filename, e.Value);
+                try
+                {
+                    _node = new NodeController();
+                    break;
+                }
+                catch (FileNotFoundException e)
+                {
+                    Log.Error(e);
+                }
+                catch (DirectoryNotFoundException e)
+                {
+                    Log.Error(e);
+                }
+                catch (NodeController.MissingConfigValueException e)
+                {
+                    Log.Error(strings.MalformedConfig, e.Filename, e.Value);
+                }
+                // TODO: Explain what happened to prompt a custom location?
+                PreferencesWindow.PromptCustomLocation();
             }
         }
 
@@ -279,22 +275,6 @@ namespace FreenetTray
                         break;
                 }
             }
-        }
-
-        private static void MissingFileExit(string filename)
-        {
-            MessageBox.Show(String.Format(strings.FileNotFoundBody, filename),
-                strings.FileNotFoundTitle,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
-        }
-
-        private static void MissingConfigExit(string filename, string configName)
-        {
-            MessageBox.Show(String.Format(strings.CannotReadConfigBody, filename, configName),
-                strings.CannotReadConfigTitle,
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Application.Exit();
         }
 
         private class OpenArgs : EventArgs

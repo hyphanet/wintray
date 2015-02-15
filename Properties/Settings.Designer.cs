@@ -82,5 +82,17 @@ namespace FreenetTray.Properties {
                 this["LogLevel"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CustomLocation {
+            get {
+                return ((string)(this["CustomLocation"]));
+            }
+            set {
+                this["CustomLocation"] = value;
+            }
+        }
     }
 }

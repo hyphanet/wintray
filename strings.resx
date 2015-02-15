@@ -120,20 +120,14 @@
   <data name="AdditionalCrashInfo" xml:space="preserve">
     <value>The following details will help people provide support:</value>
   </data>
-  <data name="CannotReadConfigBody" xml:space="preserve">
-    <value>The configuration file '{0}' does not contain a valid value for '{1}'.</value>
-  </data>
-  <data name="CannotReadConfigTitle" xml:space="preserve">
-    <value>Missing Configuration</value>
-  </data>
-  <data name="FileNotFoundBody" xml:space="preserve">
-    <value>Unable to open required file '{0}'. Please ensure this tray application is located in the Freenet installation folder.</value>
-  </data>
-  <data name="FileNotFoundTitle" xml:space="preserve">
-    <value>File Missing</value>
+  <data name="ChooseCustomLocation" xml:space="preserve">
+    <value>Choose the folder Freenet is installed to.</value>
   </data>
   <data name="FreenetStarting" xml:space="preserve">
     <value>Freenet is starting.</value>
+  </data>
+  <data name="MalformedConfig" xml:space="preserve">
+    <value>The configuration file '{0}' does not contain a valid value for '{1}'.</value>
   </data>
   <data name="PathTooLong" xml:space="preserve">
     <value>The path is too long. Please install Freenet to a folder with a shorter path.</value>

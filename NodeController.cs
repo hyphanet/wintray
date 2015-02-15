@@ -46,59 +46,59 @@ namespace FreenetTray
         private Process _wrapper;
         private readonly ProcessStartInfo _wrapperInfo = new ProcessStartInfo();
 
+        private readonly NodeConfig _config;
+
+        public string WrapperLogFilename { get { return _config.WrapperLogFilename; } }
+        public int FProxyPort { get { return _config.FProxyPort; } }
+
         public const string WrapperFilename = @"wrapper\freenetwrapper.exe";
         private const string FreenetIniFilename = @"freenet.ini";
         private const string WrapperConfFilename = "wrapper.conf";
 
-        private readonly string _anchorFilename;
-        public readonly string WrapperLogFilename;
-        public readonly int FProxyPort;
-
         // TODO: Where to document? Thows FileNotFound; DirectoryNotFound
         public NodeController()
         {
-            // TODO: 
-            /*
-             * Read wrapper config: wrapper log location, PID file location, anchor location.
-             * The PID file location is specified on the command line, so if none is read
-             * it will use a default. It's not in the default wrapper.conf and is defined on
-             * the command line in run.sh.
-             */
-            var pidFilename = "freenet.pid";
-            // wrapper.conf is relative to the wrapper's location.
-            var wrapperDir = Directory.GetParent(WrapperFilename);
-            foreach (var line in File.ReadAllLines(wrapperDir.FullName + '\\' + WrapperConfFilename))
+            if (Properties.Settings.Default.CustomLocation.Length != 0)
             {
-                // TODO: Map between constants and variables to reduce repetition?
-                if (Defines(line, "wrapper.logfile"))
-                {
-                    WrapperLogFilename = Value(line);
-                }
-                else if (Defines(line, "wrapper.pidfile"))
-                {
-                    pidFilename = Value(line);
-                }
-                else if (Defines(line, "wrapper.anchorfile"))
-                {
-                    _anchorFilename = Value(line);
-                }
+                _config = new NodeConfig(Properties.Settings.Default.CustomLocation);
             }
-
-            // TODO: A mapping between config location and variable would reduce verbosity here too.
-            if (WrapperLogFilename == null)
+            else
             {
-                throw new MissingConfigValueException(WrapperConfFilename, "wrapper.logfile");
-            }
+                Exception configException = null;
+                foreach (var path in new[]
+                {
+                    // TODO: Is this equivalent to the directory the executable is in, or the working directory?
+                    ".",
+                    Environment.ExpandEnvironmentVariables(@"%LocalAppData%\Freenet"),
+                })
+                {
+                    // TODO: If the wrapper has problems with arguments with non-ASCII characters should
+                    // this the wrapper invocation change the working directory? Won't work in the general
+                    // case because the pidfile location could contain non-ASCII characters, but it
+                    // works for the default configuration.
+                    // http://sourceforge.net/p/wrapper/bugs/290/
+                    try
+                    {
+                        _config = new NodeConfig(path);
+                        configException = null;
+                    }
+                    catch (Exception e)
+                    {
+                        configException = e;
+                    }
+                }
 
-            if (_anchorFilename == null)
-            {
-                throw new MissingConfigValueException(WrapperConfFilename, "wrapper.anchorfile");
+                if (configException != null)
+                {
+                    Log.Error("Failed to detect Freenet installation.", configException);
+                    throw configException;
+                }
             }
 
             // Search for an existing wrapper process.
             try
             {
-                using (var reader = new StreamReader(pidFilename))
+                using (var reader = new StreamReader(_config.PidFilename))
                 {
                     var line = reader.ReadLine();
 
@@ -117,10 +117,11 @@ namespace FreenetTray
                 // The wrapper can refuse to start if there is a stale PID file - "strict".
                 try
                 {
-                    File.Delete(pidFilename);
+                    File.Delete(_config.PidFilename);
                 }
                 catch (IOException)
                 {
+                    // TODO: Be louder about this? Or will the wrapper fail to start and exit nonzero?
                     Log.Debug("Stale PID file is still held.");
                 }
             }
@@ -137,26 +138,13 @@ namespace FreenetTray
                 Log.Debug("PID file not found.");
             }
 
-            // Read Freenet config: FProxy port TODO: Use ini-parser instead
-            // TODO: Does this need to wait until the node is running for the first run?
-            foreach (var line in File.ReadAllLines(FreenetIniFilename).Where(line => Defines(line, "fproxy.port")))
-            {
-                var isValid = int.TryParse(Value(line), out FProxyPort);
-                if (!isValid)
-                {
-                    Log.Error("freenet.ini does not define fproxy.port.");
-                    throw new MissingConfigValueException(FreenetIniFilename, "fproxy.port");
-                }
-                break;
-            }
-
             /*
              * Hide the wrapper window when launching it. This prevents (or at least heavily complicates)
              * stopping it with Process.CloseMainWindow() or by sending ctrl + C.
              */
-            _wrapperInfo.FileName = WrapperFilename;
+            _wrapperInfo.FileName = Path.Combine(_config.RelativeTo, WrapperFilename);
             // TODO: Is it worthwhile to omit the pidfile here when it's in the config file?
-            _wrapperInfo.Arguments = "-c " + WrapperConfFilename + " wrapper.pidfile=" + pidFilename;
+            _wrapperInfo.Arguments = "-c " + WrapperConfFilename + " wrapper.pidfile=" + _config.PidFilename;
             _wrapperInfo.UseShellExecute = false;
             _wrapperInfo.CreateNoWindow = true;
         }
@@ -210,7 +198,7 @@ namespace FreenetTray
             if (IsRunning())
             {
                 // TODO: Tolerate missing file.
-                File.Delete(_anchorFilename);
+                File.Delete(_config.AnchorFilename);
             }
         }
 
@@ -234,15 +222,79 @@ namespace FreenetTray
             }
         }
 
-        private bool Defines(string line, string key)
+        private class NodeConfig
         {
-            // TODO: Does this need to tolerate whitespace between the key and the =? Find an INI library somewhere maybe?
-            return line.StartsWith(key + "=");
-        }
+            public readonly string AnchorFilename;
+            public readonly string PidFilename;
+            public readonly string WrapperLogFilename;
+            public readonly int FProxyPort;
+            public readonly string RelativeTo;
 
-        private string Value(string line)
-        {
-            return line.Split(new[] { '=' }, 2)[1];
+            public NodeConfig(string relativeTo)
+            {
+                RelativeTo = relativeTo;
+                /*
+                 * Read wrapper config: wrapper log location, PID file location, anchor location.
+                 * The PID file location is specified on the command line, so if none is read
+                 * it will use a default. It's not in the default wrapper.conf and is defined on
+                 * the command line in run.sh.
+                 */
+                PidFilename = "freenet.pid";
+                // wrapper.conf is relative to the wrapper's location.
+                var wrapperDir = Directory.GetParent(Path.Combine(relativeTo, WrapperFilename));
+                foreach (var line in File.ReadAllLines(wrapperDir.FullName + '\\' + WrapperConfFilename))
+                {
+                    // TODO: Map between constants and variables to reduce repetition?
+                    if (Defines(line, "wrapper.logfile"))
+                    {
+                        WrapperLogFilename = Path.Combine(relativeTo, Value(line));
+                    }
+                    else if (Defines(line, "wrapper.pidfile"))
+                    {
+                        PidFilename = Path.Combine(relativeTo, Value(line));
+                    }
+                    else if (Defines(line, "wrapper.anchorfile"))
+                    {
+                        AnchorFilename = Path.Combine(relativeTo, Value(line));
+                    }
+                }
+
+                // TODO: A mapping between config location and variable would reduce verbosity here too.
+                if (WrapperLogFilename == null)
+                {
+                    throw new MissingConfigValueException(WrapperConfFilename, "wrapper.logfile");
+                }
+
+                if (AnchorFilename == null)
+                {
+                    throw new MissingConfigValueException(WrapperConfFilename, "wrapper.anchorfile");
+                }
+
+                // Read Freenet config: FProxy port TODO: Use ini-parser instead
+                // TODO: Does this need to wait until the node is running for the first run?
+                foreach (var line in File.ReadAllLines(Path.Combine(relativeTo, FreenetIniFilename))
+                    .Where(line => Defines(line, "fproxy.port")))
+                {
+                    var isValid = int.TryParse(Value(line), out FProxyPort);
+                    if (!isValid)
+                    {
+                        Log.Error("freenet.ini does not define fproxy.port.");
+                        throw new MissingConfigValueException(FreenetIniFilename, "fproxy.port");
+                    }
+                    break;
+                }
+            }
+
+            private bool Defines(string line, string key)
+            {
+                // TODO: Does this need to tolerate whitespace between the key and the =? Find an INI library somewhere maybe?
+                return line.StartsWith(key + "=");
+            }
+
+            private string Value(string line)
+            {
+                return line.Split(new[] { '=' }, 2)[1];
+            }
         }
     }
 }

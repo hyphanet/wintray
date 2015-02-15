@@ -16,6 +16,8 @@ namespace FreenetTray
         private const string RegistryStartupName = "Freenet";
         private const string StartupKeyLocation = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 
+        private readonly string InitialCustomLocation;
+
         public PreferencesWindow(IEnumerable<string> availableBrowsers)
         {
             InitializeComponent();
@@ -41,6 +43,9 @@ namespace FreenetTray
             SlowStartOption.Checked = Properties.Settings.Default.ShowSlowOpenTip;
 
             LogLevelChoice.Text = Properties.Settings.Default.LogLevel;
+
+            CustomLocationDisplay.Text = Properties.Settings.Default.CustomLocation;
+            InitialCustomLocation = Properties.Settings.Default.CustomLocation;
         }
 
         private void Apply_Click(object sender, EventArgs e)
@@ -53,6 +58,8 @@ namespace FreenetTray
             Properties.Settings.Default.ShowSlowOpenTip = SlowStartOption.Checked;
 
             Properties.Settings.Default.LogLevel = LogLevelChoice.Text;
+
+            Properties.Settings.Default.CustomLocation = CustomLocationDisplay.Text;
 
             Properties.Settings.Default.Save();
 
@@ -75,6 +82,12 @@ namespace FreenetTray
             {
                 // Do not start.
                 SetStartupArguments(null);
+            }
+
+            if (InitialCustomLocation != CustomLocationDisplay.Text)
+            {
+                // TODO: Reload config without restart? What would be the difference?
+                Application.Restart();
             }
 
             Close();
@@ -120,6 +133,35 @@ namespace FreenetTray
                 rule.EnableLoggingForLevel(LogLevel.FromOrdinal(i));
             }
             LogManager.ReconfigExistingLoggers();
+        }
+
+        private void customLocationClear_Click(object sender, EventArgs e)
+        {
+            CustomLocationDisplay.Text = String.Empty;
+        }
+
+        private void CustomLocationBrowse_Click(object sender, EventArgs e)
+        {
+            CustomLocationDisplay.Text = SelectCustomLocation();
+        }
+
+        private static string SelectCustomLocation()
+        {
+            var dialog = new FolderBrowserDialog
+            {
+                Description = strings.ChooseCustomLocation,
+                ShowNewFolderButton = false,
+            };
+
+            dialog.ShowDialog();
+
+            return dialog.SelectedPath;
+        }
+
+        public static void PromptCustomLocation()
+        {
+            Properties.Settings.Default.CustomLocation = SelectCustomLocation();
+            Properties.Settings.Default.Save();
         }
     }
 }

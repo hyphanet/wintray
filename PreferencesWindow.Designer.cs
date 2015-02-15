@@ -39,6 +39,10 @@
             this.SlowStartOption = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LogLevelChoice = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CustomLocationDisplay = new System.Windows.Forms.TextBox();
+            this.customLocationClear = new System.Windows.Forms.Button();
+            this.CustomLocationBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // StartupCheckboxList
@@ -102,6 +106,7 @@
             // 
             // LogLevelChoice
             // 
+            resources.ApplyResources(this.LogLevelChoice, "LogLevelChoice");
             this.LogLevelChoice.FormattingEnabled = true;
             this.LogLevelChoice.Items.AddRange(new object[] {
             resources.GetString("LogLevelChoice.Items"),
@@ -109,8 +114,33 @@
             resources.GetString("LogLevelChoice.Items2"),
             resources.GetString("LogLevelChoice.Items3"),
             resources.GetString("LogLevelChoice.Items4")});
-            resources.ApplyResources(this.LogLevelChoice, "LogLevelChoice");
             this.LogLevelChoice.Name = "LogLevelChoice";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
+            // CustomLocationDisplay
+            // 
+            resources.ApplyResources(this.CustomLocationDisplay, "CustomLocationDisplay");
+            this.CustomLocationDisplay.Name = "CustomLocationDisplay";
+            this.CustomLocationDisplay.ReadOnly = true;
+            // 
+            // customLocationClear
+            // 
+            this.customLocationClear.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.customLocationClear, "customLocationClear");
+            this.customLocationClear.Name = "customLocationClear";
+            this.customLocationClear.UseVisualStyleBackColor = false;
+            this.customLocationClear.Click += new System.EventHandler(this.customLocationClear_Click);
+            // 
+            // CustomLocationBrowse
+            // 
+            resources.ApplyResources(this.CustomLocationBrowse, "CustomLocationBrowse");
+            this.CustomLocationBrowse.Name = "CustomLocationBrowse";
+            this.CustomLocationBrowse.UseVisualStyleBackColor = true;
+            this.CustomLocationBrowse.Click += new System.EventHandler(this.CustomLocationBrowse_Click);
             // 
             // PreferencesWindow
             // 
@@ -118,6 +148,10 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.ClosePerefencesButton;
+            this.Controls.Add(this.CustomLocationBrowse);
+            this.Controls.Add(this.customLocationClear);
+            this.Controls.Add(this.CustomLocationDisplay);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.LogLevelChoice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SlowStartOption);
@@ -149,5 +183,9 @@
         private System.Windows.Forms.CheckBox SlowStartOption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox LogLevelChoice;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox CustomLocationDisplay;
+        private System.Windows.Forms.Button customLocationClear;
+        private System.Windows.Forms.Button CustomLocationBrowse;
     }
 }

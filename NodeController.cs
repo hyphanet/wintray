@@ -69,7 +69,6 @@ namespace FreenetTray
                 Exception configException = null;
                 foreach (var path in new[]
                 {
-                    // TODO: Is this equivalent to the directory the executable is in, or the working directory?
                     ".",
                     Environment.ExpandEnvironmentVariables(@"%LocalAppData%\Freenet"),
                 })
@@ -83,6 +82,7 @@ namespace FreenetTray
                     {
                         _config = new NodeConfig(path);
                         configException = null;
+                        break;
                     }
                     catch (Exception e)
                     {

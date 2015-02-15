@@ -44,7 +44,6 @@ namespace FreenetTray
             config.LoggingRules.Add(rule);
             LogManager.Configuration = config;
 
-            // TODO: This isn't called in the event of sudden termination. Maybe that's expected.
             FormClosed += (sender, e) => trayIcon.Visible = false;
             Shown += (sender, e) => Hide();
 

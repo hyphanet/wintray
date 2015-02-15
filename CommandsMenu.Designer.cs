@@ -36,12 +36,12 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.startFreenetMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopFreenetMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLogsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.preferencesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideIconMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.downloadsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,20 +80,26 @@
             // 
             // startFreenetMenuItem
             // 
-            this.startFreenetMenuItem.Name = "startFreenetMenuItem";
             resources.ApplyResources(this.startFreenetMenuItem, "startFreenetMenuItem");
+            this.startFreenetMenuItem.Name = "startFreenetMenuItem";
             this.startFreenetMenuItem.Click += new System.EventHandler(this.startFreenetMenuItem_Click);
             // 
             // stopFreenetMenuItem
             // 
-            this.stopFreenetMenuItem.Name = "stopFreenetMenuItem";
             resources.ApplyResources(this.stopFreenetMenuItem, "stopFreenetMenuItem");
+            this.stopFreenetMenuItem.Name = "stopFreenetMenuItem";
             this.stopFreenetMenuItem.Click += new System.EventHandler(this.stopFreenetMenuItem_Click);
+            // 
+            // downloadsMenuItem
+            // 
+            resources.ApplyResources(this.downloadsMenuItem, "downloadsMenuItem");
+            this.downloadsMenuItem.Name = "downloadsMenuItem";
+            this.downloadsMenuItem.Click += new System.EventHandler(this.downloadsMenuItem_Click);
             // 
             // viewLogsMenuItem
             // 
-            this.viewLogsMenuItem.Name = "viewLogsMenuItem";
             resources.ApplyResources(this.viewLogsMenuItem, "viewLogsMenuItem");
+            this.viewLogsMenuItem.Name = "viewLogsMenuItem";
             this.viewLogsMenuItem.Click += new System.EventHandler(this.viewLogsMenuItem_Click);
             // 
             // toolStripSeparator1
@@ -103,14 +109,14 @@
             // 
             // preferencesMenuItem
             // 
-            this.preferencesMenuItem.Name = "preferencesMenuItem";
             resources.ApplyResources(this.preferencesMenuItem, "preferencesMenuItem");
+            this.preferencesMenuItem.Name = "preferencesMenuItem";
             this.preferencesMenuItem.Click += new System.EventHandler(this.preferencesMenuItem_Click);
             // 
             // hideIconMenuItem
             // 
-            this.hideIconMenuItem.Name = "hideIconMenuItem";
             resources.ApplyResources(this.hideIconMenuItem, "hideIconMenuItem");
+            this.hideIconMenuItem.Name = "hideIconMenuItem";
             this.hideIconMenuItem.Click += new System.EventHandler(this.hideIconMenuItem_Click);
             // 
             // exitMenuItem
@@ -118,12 +124,6 @@
             this.exitMenuItem.Name = "exitMenuItem";
             resources.ApplyResources(this.exitMenuItem, "exitMenuItem");
             this.exitMenuItem.Click += new System.EventHandler(this.exitMenuItem_Click);
-            // 
-            // downloadsMenuItem
-            // 
-            this.downloadsMenuItem.Name = "downloadsMenuItem";
-            resources.ApplyResources(this.downloadsMenuItem, "downloadsMenuItem");
-            this.downloadsMenuItem.Click += new System.EventHandler(this.downloadsMenuItem_Click);
             // 
             // CommandsMenu
             // 

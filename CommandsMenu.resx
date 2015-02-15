@@ -123,66 +123,88 @@
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>112, 17</value>
   </metadata>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="openFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="openFreenetMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt, style=Bold</value>
   </data>
   <data name="openFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="openFreenetMenuItem.Text" xml:space="preserve">
     <value>Open Freenet</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>148, 6</value>
+  </data>
+  <data name="startFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="startFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="startFreenetMenuItem.Text" xml:space="preserve">
     <value>Start Freenet</value>
   </data>
+  <data name="stopFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="stopFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="stopFreenetMenuItem.Text" xml:space="preserve">
     <value>Stop Freenet</value>
   </data>
+  <data name="downloadsMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="downloadsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="downloadsMenuItem.Text" xml:space="preserve">
     <value>Downloads</value>
   </data>
+  <data name="viewLogsMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="viewLogsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="viewLogsMenuItem.Text" xml:space="preserve">
     <value>View log</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>148, 6</value>
+  </data>
+  <data name="preferencesMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="preferencesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="preferencesMenuItem.Text" xml:space="preserve">
     <value>Preferences</value>
   </data>
+  <data name="hideIconMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="hideIconMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="hideIconMenuItem.Text" xml:space="preserve">
     <value>Hide icon</value>
   </data>
   <data name="exitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>151, 22</value>
   </data>
   <data name="exitMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="contextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 214</value>
+    <value>152, 192</value>
   </data>
   <data name="&gt;&gt;contextMenu.Name" xml:space="preserve">
     <value>contextMenu</value>
@@ -782,7 +804,6 @@
   <data name="trayIcon.Text" xml:space="preserve">
     <value>Freenet</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="trayIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -828,6 +849,12 @@
   <data name="&gt;&gt;stopFreenetMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;downloadsMenuItem.Name" xml:space="preserve">
+    <value>downloadsMenuItem</value>
+  </data>
+  <data name="&gt;&gt;downloadsMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;viewLogsMenuItem.Name" xml:space="preserve">
     <value>viewLogsMenuItem</value>
   </data>
@@ -856,12 +883,6 @@
     <value>exitMenuItem</value>
   </data>
   <data name="&gt;&gt;exitMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadsMenuItem.Name" xml:space="preserve">
-    <value>downloadsMenuItem</value>
-  </data>
-  <data name="&gt;&gt;downloadsMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

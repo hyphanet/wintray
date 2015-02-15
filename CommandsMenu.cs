@@ -31,7 +31,7 @@ namespace FreenetTray
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
-        private readonly NodeController _node;
+        private NodeController _node;
 
         public CommandsMenu()
         {
@@ -54,7 +54,32 @@ namespace FreenetTray
              * introduces a fingerprint of Freenet on the system even when it doesn't do anything on
              * startup.
              */
+        }
 
+        private void CommandsMenu_Load(object sender, EventArgs e)
+        {
+            trayIcon.Icon = Resources.Offline;
+            BeginInvoke(new Action(FindNode));
+        }
+
+        private void NodeStarted(object sender, EventArgs e)
+        {
+            RefreshMenu(true);
+        }
+
+        private void NodeStopped(object sender, EventArgs e)
+        {
+            RefreshMenu(false);
+        }
+
+        private void NodeCrashed(NodeController.CrashType crashType)
+        {
+            RefreshMenu(false);
+            BeginInvoke(new Action(new CrashDialog(crashType, Start, ViewLogs).Show));
+        }
+
+        private void FindNode()
+        {
             while (true)
             {
                 try
@@ -75,46 +100,40 @@ namespace FreenetTray
                     Log.Error(strings.MalformedConfig, e.Filename, e.Value);
                 }
                 // TODO: Explain what happened to prompt a custom location?
-                PreferencesWindow.PromptCustomLocation();
-            }
-        }
-
-        private void CommandsMenu_Load(object sender, EventArgs e)
-        {
-            /*
-             * If the node could not be initialized the form will still load before displaying the error
-             * and exiting the application.
-             */
-            if (_node == null)
-            {
-                Application.Exit();
-                return;
+                try
+                {
+                    PreferencesWindow.PromptCustomLocation(this);
+                }
+                catch (OperationCanceledException)
+                {
+                    /* User exited the file browser. */
+                    Application.Exit();
+                    return;
+                }
             }
 
             _node.OnStarted += NodeStarted;
             _node.OnStopped += NodeStopped;
             _node.OnCrashed += NodeCrashed;
 
+            foreach (var menuItem in new[]
+            {
+                openFreenetMenuItem,
+                startFreenetMenuItem,
+                stopFreenetMenuItem,
+                downloadsMenuItem,
+                viewLogsMenuItem,
+                preferencesMenuItem,
+                hideIconMenuItem,
+            })
+            {
+                menuItem.Enabled = true;
+            }
+
             // Set menu up for whether there is an existing node.
             RefreshMenu(_node.IsRunning());
 
             ReadCommandLine();
-        }
-
-        private void NodeStarted(object sender, EventArgs e)
-        {
-            RefreshMenu(true);
-        }
-
-        private void NodeStopped(object sender, EventArgs e)
-        {
-            RefreshMenu(false);
-        }
-
-        private void NodeCrashed(NodeController.CrashType crashType)
-        {
-            RefreshMenu(false);
-            BeginInvoke(new Action(new CrashDialog(crashType, Start, ViewLogs).Show));
         }
 
         private void openFreenetMenuItem_Click(object sender = null, EventArgs e = null)
@@ -202,7 +221,11 @@ namespace FreenetTray
 
         private void exitMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            _node.Stop();
+            if (_node != null)
+            {
+                _node.Stop();
+            }
+
             Application.Exit();
         }
 

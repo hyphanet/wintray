@@ -142,25 +142,36 @@ namespace FreenetTray
 
         private void CustomLocationBrowse_Click(object sender, EventArgs e)
         {
-            CustomLocationDisplay.Text = SelectCustomLocation();
+            try
+            {
+                CustomLocationDisplay.Text = SelectCustomLocation(this);
+            }
+            catch (OperationCanceledException)
+            {
+                /* User does not want to change the directory. */
+            }
         }
 
-        private static string SelectCustomLocation()
+        private static string SelectCustomLocation(IWin32Window owner)
         {
-            var dialog = new FolderBrowserDialog
+            using (var dialog = new FolderBrowserDialog
             {
                 Description = strings.ChooseCustomLocation,
                 ShowNewFolderButton = false,
-            };
+            })
+            {
+                if (dialog.ShowDialog(owner) == DialogResult.Cancel)
+                {
+                    throw new OperationCanceledException();
+                }
 
-            dialog.ShowDialog();
-
-            return dialog.SelectedPath;
+                return dialog.SelectedPath;
+            }
         }
 
-        public static void PromptCustomLocation()
+        public static void PromptCustomLocation(IWin32Window owner)
         {
-            Properties.Settings.Default.CustomLocation = SelectCustomLocation();
+            Properties.Settings.Default.CustomLocation = SelectCustomLocation(owner);
             Properties.Settings.Default.Save();
         }
     }

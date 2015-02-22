@@ -109,8 +109,8 @@
             // 
             // preferencesMenuItem
             // 
-            resources.ApplyResources(this.preferencesMenuItem, "preferencesMenuItem");
             this.preferencesMenuItem.Name = "preferencesMenuItem";
+            resources.ApplyResources(this.preferencesMenuItem, "preferencesMenuItem");
             this.preferencesMenuItem.Click += new System.EventHandler(this.preferencesMenuItem_Click);
             // 
             // hideIconMenuItem

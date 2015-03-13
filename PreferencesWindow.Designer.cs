@@ -32,7 +32,7 @@
             this.StartupCheckboxList = new System.Windows.Forms.CheckedListBox();
             this.StartupLabel = new System.Windows.Forms.Label();
             this.ApplyButton = new System.Windows.Forms.Button();
-            this.ClosePerefencesButton = new System.Windows.Forms.Button();
+            this.ClosePreferencesButton = new System.Windows.Forms.Button();
             this.BrowserChoice = new System.Windows.Forms.ComboBox();
             this.BrowserLabel = new System.Windows.Forms.Label();
             this.BehaviorLabel = new System.Windows.Forms.Label();
@@ -69,13 +69,13 @@
             this.ApplyButton.UseVisualStyleBackColor = true;
             this.ApplyButton.Click += new System.EventHandler(this.Apply_Click);
             // 
-            // ClosePerefencesButton
+            // ClosePreferencesButton
             // 
-            this.ClosePerefencesButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            resources.ApplyResources(this.ClosePerefencesButton, "ClosePerefencesButton");
-            this.ClosePerefencesButton.Name = "ClosePerefencesButton";
-            this.ClosePerefencesButton.UseVisualStyleBackColor = true;
-            this.ClosePerefencesButton.Click += new System.EventHandler(this.Cancel_Click);
+            this.ClosePreferencesButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.ClosePreferencesButton, "ClosePreferencesButton");
+            this.ClosePreferencesButton.Name = "ClosePreferencesButton";
+            this.ClosePreferencesButton.UseVisualStyleBackColor = true;
+            this.ClosePreferencesButton.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // BrowserChoice
             // 
@@ -147,7 +147,7 @@
             this.AcceptButton = this.ApplyButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.ClosePerefencesButton;
+            this.CancelButton = this.ClosePreferencesButton;
             this.Controls.Add(this.CustomLocationBrowse);
             this.Controls.Add(this.customLocationClear);
             this.Controls.Add(this.CustomLocationDisplay);
@@ -158,7 +158,7 @@
             this.Controls.Add(this.BehaviorLabel);
             this.Controls.Add(this.BrowserLabel);
             this.Controls.Add(this.BrowserChoice);
-            this.Controls.Add(this.ClosePerefencesButton);
+            this.Controls.Add(this.ClosePreferencesButton);
             this.Controls.Add(this.ApplyButton);
             this.Controls.Add(this.StartupLabel);
             this.Controls.Add(this.StartupCheckboxList);
@@ -176,7 +176,7 @@
         private System.Windows.Forms.CheckedListBox StartupCheckboxList;
         private System.Windows.Forms.Label StartupLabel;
         private System.Windows.Forms.Button ApplyButton;
-        private System.Windows.Forms.Button ClosePerefencesButton;
+        private System.Windows.Forms.Button ClosePreferencesButton;
         private System.Windows.Forms.ComboBox BrowserChoice;
         private System.Windows.Forms.Label BrowserLabel;
         private System.Windows.Forms.Label BehaviorLabel;

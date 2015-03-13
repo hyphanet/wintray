@@ -206,31 +206,31 @@
   <data name="&gt;&gt;ApplyButton.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="ClosePerefencesButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="ClosePreferencesButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="ClosePerefencesButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="ClosePreferencesButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 250</value>
   </data>
-  <data name="ClosePerefencesButton.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="ClosePreferencesButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="ClosePerefencesButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="ClosePreferencesButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="ClosePerefencesButton.Text" xml:space="preserve">
+  <data name="ClosePreferencesButton.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="&gt;&gt;ClosePerefencesButton.Name" xml:space="preserve">
-    <value>ClosePerefencesButton</value>
+  <data name="&gt;&gt;ClosePreferencesButton.Name" xml:space="preserve">
+    <value>ClosePreferencesButton</value>
   </data>
-  <data name="&gt;&gt;ClosePerefencesButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;ClosePreferencesButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ClosePerefencesButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ClosePreferencesButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ClosePerefencesButton.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ClosePreferencesButton.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
   <data name="BrowserChoice.Font" type="System.Drawing.Font, System.Drawing">

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrashDialog));
             this.IconBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.crashMessageLabel = new System.Windows.Forms.Label();
             this.ViewLogButton = new System.Windows.Forms.Button();
             this.SupportChatButton = new System.Windows.Forms.Button();
@@ -45,11 +44,6 @@
             resources.ApplyResources(this.IconBox, "IconBox");
             this.IconBox.Name = "IconBox";
             this.IconBox.TabStop = false;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
             // 
             // crashMessageLabel
             // 
@@ -103,7 +97,6 @@
             this.Controls.Add(this.SupportChatButton);
             this.Controls.Add(this.ViewLogButton);
             this.Controls.Add(this.crashMessageLabel);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.IconBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -112,14 +105,12 @@
             this.Load += new System.EventHandler(this.CrashDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IconBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox IconBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label crashMessageLabel;
         private System.Windows.Forms.Button ViewLogButton;
         private System.Windows.Forms.Button SupportChatButton;

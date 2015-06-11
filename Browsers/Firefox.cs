@@ -16,6 +16,7 @@ namespace FreenetTray.Browsers
         {
             @"HKEY_LOCAL_MACHINE\SOFTWARE\Mozilla\Mozilla Firefox",
             @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox",
+            @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Mozilla\Mozilla Firefox",
         };
 
         private static readonly string[] PathRegistryKeys =
@@ -25,6 +26,7 @@ namespace FreenetTray.Browsers
             @"HKEY_LOCAL_MACHINE\SOFTWARE\Mozilla\Mozilla Firefox\{VersionNumber}\Main",
             @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox\{CurrentVersion}\Main",
             @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox {VersionNumber}\bin",
+            @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Mozilla\Mozilla Firefox {VersionNumber}\bin",
         };
 
         private readonly bool _isInstalled;

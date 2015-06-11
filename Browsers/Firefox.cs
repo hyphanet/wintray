@@ -20,6 +20,8 @@ namespace FreenetTray.Browsers
 
         private static readonly string[] PathRegistryKeys =
         {
+            // CurrentVersion is {VersionNumber} {Locale}. In these keys {VersionNumber}
+            // and {CurrentVersion} are replaced before lookup.
             @"HKEY_LOCAL_MACHINE\SOFTWARE\Mozilla\Mozilla Firefox\{VersionNumber}\Main",
             @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox\{CurrentVersion}\Main",
             @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox {VersionNumber}\bin",

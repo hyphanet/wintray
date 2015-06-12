@@ -17,6 +17,10 @@ Menu items | command line options:
 
 Command line options are executed from left to right, so `-othercommand -hide` is useful to perform an action and exit the tray application.
 
+## First run | -welcome
+
+This shows a balloon tip about using the tray and opens Freenet like -open.
+
 ## Open Freenet | -open
 
 Open a browser in privacy mode to Freenet, if possible. The default preference is [same as AHK app], but a specific browser or command can be set as well. If Freenet is not running it is started.

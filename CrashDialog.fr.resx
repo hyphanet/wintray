@@ -117,104 +117,198 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="trayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>112, 17</value>
-  </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="openFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
-  <data name="openFreenetMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold</value>
+  <data name="IconBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
   </data>
-  <data name="openFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="IconBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 58</value>
   </data>
-  <data name="openFreenetMenuItem.Text" xml:space="preserve">
-    <value>Ouvrir Freenet</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <data name="IconBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+  <data name="&gt;&gt;IconBox.Name" xml:space="preserve">
+    <value>IconBox</value>
   </data>
-  <data name="startFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="&gt;&gt;IconBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="startFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="&gt;&gt;IconBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="startFreenetMenuItem.Text" xml:space="preserve">
-    <value>Démarrer Freenet</value>
+  <data name="&gt;&gt;IconBox.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="stopFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <data name="crashMessageLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="stopFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="crashMessageLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>77, 13</value>
   </data>
-  <data name="stopFreenetMenuItem.Text" xml:space="preserve">
-    <value>Arrêter Freenet</value>
+  <data name="crashMessageLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>456, 76</value>
   </data>
-  <data name="downloadsMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="crashMessageLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="downloadsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="crashMessageLabel.Text" xml:space="preserve">
+    <value>Freenet à planté! Regardez le fichier de logs pour plus de détails. Pour plus d&apos;aide, contactez le support via le chat ou la mailing liste.</value>
   </data>
-  <data name="downloadsMenuItem.Text" xml:space="preserve">
-    <value>Téléchargements</value>
+  <data name="&gt;&gt;crashMessageLabel.Name" xml:space="preserve">
+    <value>crashMessageLabel</value>
   </data>
-  <data name="viewLogsMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="&gt;&gt;crashMessageLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="viewLogsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="&gt;&gt;crashMessageLabel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="viewLogsMenuItem.Text" xml:space="preserve">
-    <value>Voir l&apos;historique</value>
+  <data name="&gt;&gt;crashMessageLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+  <data name="ViewLogButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="preferencesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="ViewLogButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 92</value>
   </data>
-  <data name="preferencesMenuItem.Text" xml:space="preserve">
-    <value>Préférences</value>
+  <data name="ViewLogButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 23</value>
   </data>
-  <data name="hideIconMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="ViewLogButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="hideIconMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="ViewLogButton.Text" xml:space="preserve">
+    <value>View log file</value>
   </data>
-  <data name="hideIconMenuItem.Text" xml:space="preserve">
-    <value>Cacher l&apos;icône</value>
+  <data name="&gt;&gt;ViewLogButton.Name" xml:space="preserve">
+    <value>ViewLogButton</value>
   </data>
-  <data name="exitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="&gt;&gt;ViewLogButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="exitMenuItem.Text" xml:space="preserve">
-    <value>Quitter</value>
+  <data name="&gt;&gt;ViewLogButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="contextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 214</value>
+  <data name="&gt;&gt;ViewLogButton.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;contextMenu.Name" xml:space="preserve">
-    <value>contextMenu</value>
+  <data name="SupportChatButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 92</value>
   </data>
-  <data name="&gt;&gt;contextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="SupportChatButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 23</value>
   </data>
-  <data name="trayIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="SupportChatButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SupportChatButton.Text" xml:space="preserve">
+    <value>Ouvrir le chat d&apos;aide</value>
+  </data>
+  <data name="&gt;&gt;SupportChatButton.Name" xml:space="preserve">
+    <value>SupportChatButton</value>
+  </data>
+  <data name="&gt;&gt;SupportChatButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SupportChatButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SupportChatButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="MailingListButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>247, 92</value>
+  </data>
+  <data name="MailingListButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="MailingListButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="MailingListButton.Text" xml:space="preserve">
+    <value>Ouvrir la mailing liste</value>
+  </data>
+  <data name="&gt;&gt;MailingListButton.Name" xml:space="preserve">
+    <value>MailingListButton</value>
+  </data>
+  <data name="&gt;&gt;MailingListButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MailingListButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MailingListButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="RestartButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 92</value>
+  </data>
+  <data name="RestartButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="RestartButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="RestartButton.Text" xml:space="preserve">
+    <value>Redémarrer</value>
+  </data>
+  <data name="&gt;&gt;RestartButton.Name" xml:space="preserve">
+    <value>RestartButton</value>
+  </data>
+  <data name="&gt;&gt;RestartButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RestartButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RestartButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CloseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>455, 92</value>
+  </data>
+  <data name="CloseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="CloseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="CloseButton.Text" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
+    <value>CloseButton</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CloseButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>542, 124</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAABAAsAICAAAAEAGACoDAAAtgAAACAgAAABAAgAqAgAAF4NAAAgIAAAAQAgAKgQAAAGFgAAEBAQAAEA
-        BAAoAQAAriYAABAQAAABAAgAaAUAANYnAAAQEAAAAQAYAGgDAAA+LQAAEBAAAAEAIABoBAAApjAAADAw
-        AAABABgAqBwAAA41AAAwMAAAAQAIAKgOAAC2UQAAMDAAAAEAIACoJQAAXmAAACAgEAABAAQA6AIAAAaG
-        AAAoAAAAIAAAAEAAAAABABgAAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAABAAsAICAAAAAAGACoDAAAtgAAACAgAAAAAAgAqAgAAF4NAAAgIAAAAAAgAKgQAAAGFgAAEBAQAAAA
+        BAAoAQAAriYAABAQAAAAAAgAaAUAANYnAAAQEAAAAAAYAGgDAAA+LQAAEBAAAAAAIABoBAAApjAAADAw
+        AAAAABgAqBwAAA41AAAwMAAAAAAIAKgOAAC2UQAAMDAAAAAAIACoJQAAXmAAACAgEAAAAAQA6AIAAAaG
+        AAAoAAAAIAAAAEAAAAABABgAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -225,39 +319,39 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeXJkeXJkAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeXJkeXJkAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAamVckYp8vbKfeXJkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAamVcsaqa9+/c8+DCooxp
+        AAAAAAAAAAAAAAAAAAAAamVckYp8vbKfeXJkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAamVcsaqa9+/c8+DC
+        ooxpAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAamVcsqqa+O/b9Nq41619nX1UAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAamVcsKiX
+        +OzU9Nez1al5qX9ScFk6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        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
-        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
+        AAAAAAAAAAAAAAAAmnhT2bOK9d/B7eLMdnBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAk3JQ0KqA8dax
+        5tW2V09AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf2JDuZVu17aPmYNlAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        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
+        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
@@ -266,8 +360,8 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////
-        ////////////////////////////5////8P///+D////A////gP///wHj//wDwP/AD8AAAB/wAAB//AA
-        Af/+AAD//AAA//gAAP/4APD//AB///8AP///+B////wf///+H////x//////////////////////////
+        ////////////////////////////8////+H////B////gf///wH///4Dx//4B4H/gB+AAAA/4AAA//gA
+        AP//AAB//gAAf/wAAH/8AHh//gA///+AH////A////4P////D////4//////////////////////////
         //8oAAAAIAAAAEAAAAABAAgAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAAAAICAAIAA
         AACAAIAAgIAAAMDAwADA3MAA8MqmAAQEBAAICAgADAwMABEREQAWFhYAHBwcACIiIgApKSkAVVVVAE1N
         TQBCQkIAOTk5AIB8/wBQUP8AkwDWAP/szADG1u8A1ufnAJCprQAAADMAAABmAAAAmQAAAMwAADMAAAAz
@@ -798,92 +892,11 @@
         //////////////////8=
 </value>
   </data>
-  <data name="trayIcon.Text" xml:space="preserve">
-    <value>Freenet</value>
-  </data>
-  <data name="trayIcon.Visible" type="System.Boolean, mscorlib">
-    <value>Vrai</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 262</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="&gt;&gt;trayIcon.Name" xml:space="preserve">
-    <value>trayIcon</value>
-  </data>
-  <data name="&gt;&gt;trayIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFreenetMenuItem.Name" xml:space="preserve">
-    <value>openFreenetMenuItem</value>
-  </data>
-  <data name="&gt;&gt;openFreenetMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startFreenetMenuItem.Name" xml:space="preserve">
-    <value>startFreenetMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startFreenetMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stopFreenetMenuItem.Name" xml:space="preserve">
-    <value>stopFreenetMenuItem</value>
-  </data>
-  <data name="&gt;&gt;stopFreenetMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadsMenuItem.Name" xml:space="preserve">
-    <value>downloadsMenuItem</value>
-  </data>
-  <data name="&gt;&gt;downloadsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;viewLogsMenuItem.Name" xml:space="preserve">
-    <value>viewLogsMenuItem</value>
-  </data>
-  <data name="&gt;&gt;viewLogsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;preferencesMenuItem.Name" xml:space="preserve">
-    <value>preferencesMenuItem</value>
-  </data>
-  <data name="&gt;&gt;preferencesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hideIconMenuItem.Name" xml:space="preserve">
-    <value>hideIconMenuItem</value>
-  </data>
-  <data name="&gt;&gt;hideIconMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitMenuItem.Name" xml:space="preserve">
-    <value>exitMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exitMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Freenet Crashed</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>CommandsMenu</value>
+    <value>CrashDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

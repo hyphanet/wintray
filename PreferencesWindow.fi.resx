@@ -117,99 +117,423 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="trayIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>112, 17</value>
-  </metadata>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-  <data name="openFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
-  <data name="openFreenetMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt, style=Bold</value>
+  <data name="StartupCheckboxList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
-  <data name="openFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="StartupCheckboxList.Items" xml:space="preserve">
+    <value>Näytä palkkikuvake kun Windows käynnistyy</value>
   </data>
-  <data name="openFreenetMenuItem.Text" xml:space="preserve">
-    <value>Ouvrir Freenet</value>
+  <data name="StartupCheckboxList.Items1" xml:space="preserve">
+    <value>Käynnistä Freenet kun Windows käynnistyy</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+  <data name="StartupCheckboxList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 29</value>
   </data>
-  <data name="startFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="StartupCheckboxList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 36</value>
   </data>
-  <data name="startFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <data name="StartupCheckboxList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="startFreenetMenuItem.Text" xml:space="preserve">
-    <value>Démarrer Freenet</value>
+  <data name="&gt;&gt;StartupCheckboxList.Name" xml:space="preserve">
+    <value>StartupCheckboxList</value>
   </data>
-  <data name="stopFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="&gt;&gt;StartupCheckboxList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="stopFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="&gt;&gt;StartupCheckboxList.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="stopFreenetMenuItem.Text" xml:space="preserve">
-    <value>Arrêter Freenet</value>
+  <data name="&gt;&gt;StartupCheckboxList.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
-  <data name="downloadsMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="StartupLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="downloadsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="StartupLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
-  <data name="downloadsMenuItem.Text" xml:space="preserve">
-    <value>Téléchargements</value>
+  <data name="StartupLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
   </data>
-  <data name="viewLogsMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="StartupLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 15</value>
   </data>
-  <data name="viewLogsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="StartupLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="viewLogsMenuItem.Text" xml:space="preserve">
-    <value>Voir l&apos;historique</value>
+  <data name="StartupLabel.Text" xml:space="preserve">
+    <value>Käynnistys</value>
   </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+  <data name="&gt;&gt;StartupLabel.Name" xml:space="preserve">
+    <value>StartupLabel</value>
   </data>
-  <data name="preferencesMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="&gt;&gt;StartupLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="preferencesMenuItem.Text" xml:space="preserve">
-    <value>Préférences</value>
+  <data name="&gt;&gt;StartupLabel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="hideIconMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+  <data name="&gt;&gt;StartupLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
-  <data name="hideIconMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="ApplyButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
-  <data name="hideIconMenuItem.Text" xml:space="preserve">
-    <value>Cacher l&apos;icône</value>
+  <data name="ApplyButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 250</value>
   </data>
-  <data name="exitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+  <data name="ApplyButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="exitMenuItem.Text" xml:space="preserve">
-    <value>Quitter</value>
+  <data name="ApplyButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="contextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 214</value>
+  <data name="ApplyButton.Text" xml:space="preserve">
+    <value>Käytä</value>
   </data>
-  <data name="&gt;&gt;contextMenu.Name" xml:space="preserve">
-    <value>contextMenu</value>
+  <data name="&gt;&gt;ApplyButton.Name" xml:space="preserve">
+    <value>ApplyButton</value>
   </data>
-  <data name="&gt;&gt;contextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ApplyButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="trayIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="&gt;&gt;ApplyButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ApplyButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="ClosePreferencesButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="ClosePreferencesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 250</value>
+  </data>
+  <data name="ClosePreferencesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="ClosePreferencesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="ClosePreferencesButton.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;ClosePreferencesButton.Name" xml:space="preserve">
+    <value>ClosePreferencesButton</value>
+  </data>
+  <data name="&gt;&gt;ClosePreferencesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClosePreferencesButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ClosePreferencesButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="BrowserChoice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="BrowserChoice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 90</value>
+  </data>
+  <data name="BrowserChoice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="BrowserChoice.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;BrowserChoice.Name" xml:space="preserve">
+    <value>BrowserChoice</value>
+  </data>
+  <data name="&gt;&gt;BrowserChoice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BrowserChoice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BrowserChoice.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="BrowserLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BrowserLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="BrowserLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 72</value>
+  </data>
+  <data name="BrowserLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 15</value>
+  </data>
+  <data name="BrowserLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="BrowserLabel.Text" xml:space="preserve">
+    <value>Selain</value>
+  </data>
+  <data name="&gt;&gt;BrowserLabel.Name" xml:space="preserve">
+    <value>BrowserLabel</value>
+  </data>
+  <data name="&gt;&gt;BrowserLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BrowserLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BrowserLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="BehaviorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BehaviorLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="BehaviorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 116</value>
+  </data>
+  <data name="BehaviorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 15</value>
+  </data>
+  <data name="BehaviorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="BehaviorLabel.Text" xml:space="preserve">
+    <value>Käyttäytyminen</value>
+  </data>
+  <data name="&gt;&gt;BehaviorLabel.Name" xml:space="preserve">
+    <value>BehaviorLabel</value>
+  </data>
+  <data name="&gt;&gt;BehaviorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BehaviorLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BehaviorLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SlowStartOption.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SlowStartOption.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="SlowStartOption.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 134</value>
+  </data>
+  <data name="SlowStartOption.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 19</value>
+  </data>
+  <data name="SlowStartOption.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="SlowStartOption.Text" xml:space="preserve">
+    <value>Näytä ilmoitus hitaasti käynnistyttäessä</value>
+  </data>
+  <data name="&gt;&gt;SlowStartOption.Name" xml:space="preserve">
+    <value>SlowStartOption</value>
+  </data>
+  <data name="&gt;&gt;SlowStartOption.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SlowStartOption.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SlowStartOption.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 160</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 15</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Vikajäljityslokikirjoitus</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LogLevelChoice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="LogLevelChoice.Items" xml:space="preserve">
+    <value>Pois päältä</value>
+  </data>
+  <data name="LogLevelChoice.Items1" xml:space="preserve">
+    <value>Virhe</value>
+  </data>
+  <data name="LogLevelChoice.Items2" xml:space="preserve">
+    <value>Varoitus</value>
+  </data>
+  <data name="LogLevelChoice.Items3" xml:space="preserve">
+    <value>Tiedot</value>
+  </data>
+  <data name="LogLevelChoice.Items4" xml:space="preserve">
+    <value>Vianjäljitys</value>
+  </data>
+  <data name="LogLevelChoice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 177</value>
+  </data>
+  <data name="LogLevelChoice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 23</value>
+  </data>
+  <data name="LogLevelChoice.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;LogLevelChoice.Name" xml:space="preserve">
+    <value>LogLevelChoice</value>
+  </data>
+  <data name="&gt;&gt;LogLevelChoice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LogLevelChoice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LogLevelChoice.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 203</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Mukautettu sijainti</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CustomLocationDisplay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="CustomLocationDisplay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 221</value>
+  </data>
+  <data name="CustomLocationDisplay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 23</value>
+  </data>
+  <data name="CustomLocationDisplay.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationDisplay.Name" xml:space="preserve">
+    <value>CustomLocationDisplay</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationDisplay.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationDisplay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationDisplay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="customLocationClear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="customLocationClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 221</value>
+  </data>
+  <data name="customLocationClear.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 23</value>
+  </data>
+  <data name="customLocationClear.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="customLocationClear.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="&gt;&gt;customLocationClear.Name" xml:space="preserve">
+    <value>customLocationClear</value>
+  </data>
+  <data name="&gt;&gt;customLocationClear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;customLocationClear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;customLocationClear.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CustomLocationBrowse.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="CustomLocationBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>249, 221</value>
+  </data>
+  <data name="CustomLocationBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 23</value>
+  </data>
+  <data name="CustomLocationBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="CustomLocationBrowse.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationBrowse.Name" xml:space="preserve">
+    <value>CustomLocationBrowse</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationBrowse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CustomLocationBrowse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>284, 282</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAsAICAAAAEAGACoDAAAtgAAACAgAAABAAgAqAgAAF4NAAAgIAAAAQAgAKgQAAAGFgAAEBAQAAEA
         BAAoAQAAriYAABAQAAABAAgAaAUAANYnAAAQEAAAAQAYAGgDAAA+LQAAEBAAAAEAIABoBAAApjAAADAw
@@ -798,92 +1122,11 @@
         //////////////////8=
 </value>
   </data>
-  <data name="trayIcon.Text" xml:space="preserve">
-    <value>Freenet</value>
-  </data>
-  <data name="trayIcon.Visible" type="System.Boolean, mscorlib">
-    <value>Vrai</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 262</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Form1</value>
-  </data>
-  <data name="&gt;&gt;trayIcon.Name" xml:space="preserve">
-    <value>trayIcon</value>
-  </data>
-  <data name="&gt;&gt;trayIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFreenetMenuItem.Name" xml:space="preserve">
-    <value>openFreenetMenuItem</value>
-  </data>
-  <data name="&gt;&gt;openFreenetMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startFreenetMenuItem.Name" xml:space="preserve">
-    <value>startFreenetMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startFreenetMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stopFreenetMenuItem.Name" xml:space="preserve">
-    <value>stopFreenetMenuItem</value>
-  </data>
-  <data name="&gt;&gt;stopFreenetMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;downloadsMenuItem.Name" xml:space="preserve">
-    <value>downloadsMenuItem</value>
-  </data>
-  <data name="&gt;&gt;downloadsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;viewLogsMenuItem.Name" xml:space="preserve">
-    <value>viewLogsMenuItem</value>
-  </data>
-  <data name="&gt;&gt;viewLogsMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;preferencesMenuItem.Name" xml:space="preserve">
-    <value>preferencesMenuItem</value>
-  </data>
-  <data name="&gt;&gt;preferencesMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hideIconMenuItem.Name" xml:space="preserve">
-    <value>hideIconMenuItem</value>
-  </data>
-  <data name="&gt;&gt;hideIconMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitMenuItem.Name" xml:space="preserve">
-    <value>exitMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exitMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>Asetukset</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>CommandsMenu</value>
+    <value>PreferencesWindow</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

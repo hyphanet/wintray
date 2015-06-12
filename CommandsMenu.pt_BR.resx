@@ -125,7 +125,7 @@
   </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="openFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+    <value>Falso</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
   <data name="openFreenetMenuItem.Font" type="System.Drawing.Font, System.Drawing">
@@ -135,46 +135,46 @@
     <value>152, 22</value>
   </data>
   <data name="openFreenetMenuItem.Text" xml:space="preserve">
-    <value>Ouvrir Freenet</value>
+    <value>Open Freenet</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 6</value>
   </data>
   <data name="startFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+    <value>False</value>
   </data>
   <data name="startFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="startFreenetMenuItem.Text" xml:space="preserve">
-    <value>Démarrer Freenet</value>
+    <value>Iniciar Freenet</value>
   </data>
   <data name="stopFreenetMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+    <value>Falso</value>
   </data>
   <data name="stopFreenetMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="stopFreenetMenuItem.Text" xml:space="preserve">
-    <value>Arrêter Freenet</value>
+    <value>Stop Freenet</value>
   </data>
   <data name="downloadsMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+    <value>False</value>
   </data>
   <data name="downloadsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="downloadsMenuItem.Text" xml:space="preserve">
-    <value>Téléchargements</value>
+    <value>Downloads</value>
   </data>
   <data name="viewLogsMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+    <value>False</value>
   </data>
   <data name="viewLogsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="viewLogsMenuItem.Text" xml:space="preserve">
-    <value>Voir l&apos;historique</value>
+    <value>View log</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 6</value>
@@ -183,22 +183,22 @@
     <value>152, 22</value>
   </data>
   <data name="preferencesMenuItem.Text" xml:space="preserve">
-    <value>Préférences</value>
+    <value>Preferences</value>
   </data>
   <data name="hideIconMenuItem.Enabled" type="System.Boolean, mscorlib">
-    <value>Faux</value>
+    <value>False</value>
   </data>
   <data name="hideIconMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="hideIconMenuItem.Text" xml:space="preserve">
-    <value>Cacher l&apos;icône</value>
+    <value>Hide icon</value>
   </data>
   <data name="exitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="exitMenuItem.Text" xml:space="preserve">
-    <value>Quitter</value>
+    <value>Exit</value>
   </data>
   <data name="contextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 214</value>
@@ -802,7 +802,7 @@
     <value>Freenet</value>
   </data>
   <data name="trayIcon.Visible" type="System.Boolean, mscorlib">
-    <value>Vrai</value>
+    <value>True</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdditionalCrashInfo" xml:space="preserve">
-    <value>Les détails suivants aideront les gens à fournir de l&apos;assistance :</value>
+    <value>下列信息有助于人们提供支持：</value>
   </data>
   <data name="ChooseCustomLocation" xml:space="preserve">
-    <value>Choisissez le dossier dans lequel Freenet est installé.</value>
+    <value>选择 Freenet 安装到的文件夹。</value>
   </data>
   <data name="FreenetStarting" xml:space="preserve">
-    <value>Freenet démarre.</value>
+    <value>Firefox 正在启动。</value>
   </data>
   <data name="MalformedConfig" xml:space="preserve">
-    <value>Le fichier de configuration &apos;{0}&apos; ne contient pas de valeur valide pour &apos;{1}&apos;.</value>
+    <value>配置文件 &apos;{0}&apos; 没有包含有效的 &apos;{1}&apos; 值。</value>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>Le chemin est trop long. Veuillez installer Freenet dans un dossier ayant un chemin plus court.</value>
+    <value>路径太长。请安装 Freenet 到一个较短路径的文件夹。</value>
   </data>
   <data name="UnknownWrapperLaunchErrorTitle" xml:space="preserve">
-    <value>Erreur inconnue</value>
+    <value>未知错误</value>
   </data>
   <data name="WelcomeTip" xml:space="preserve">
-    <value>Cette icône de zone de notification contrôle Freenet, faire un clic droit ouvre un menu.</value>
+    <value>此托盘图标用以控制 Freenet。左击打开 Freenet，右击打开菜单。</value>
   </data>
   <data name="WrapperFileNotFound" xml:space="preserve">
-    <value>L&apos;exécutable Wrapper n&apos;a pas été trouvé à &apos;{0}&apos;.</value>
+    <value>外壳程序在 &apos;{0}&apos; 未找到。</value>
   </data>
 </root>

@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdditionalCrashInfo" xml:space="preserve">
-    <value>Les détails suivants aideront les gens à fournir de l&apos;assistance :</value>
+    <value>Os detalhes que se seguem ajudarão as pessoas a prestar suporte:</value>
   </data>
   <data name="ChooseCustomLocation" xml:space="preserve">
-    <value>Choisissez le dossier dans lequel Freenet est installé.</value>
+    <value>Escolha o diretório onde o software Freenet será instalado.</value>
   </data>
   <data name="FreenetStarting" xml:space="preserve">
-    <value>Freenet démarre.</value>
+    <value>Inicializando o nó Freenet.</value>
   </data>
   <data name="MalformedConfig" xml:space="preserve">
-    <value>Le fichier de configuration &apos;{0}&apos; ne contient pas de valeur valide pour &apos;{1}&apos;.</value>
+    <value>O arquivo de configuração &apos;{0}&apos; não contém um valor válido para &apos;{1}&apos;.</value>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>Le chemin est trop long. Veuillez installer Freenet dans un dossier ayant un chemin plus court.</value>
+    <value>O caminho é longo demais. Por favor, instale o software Freenet num diretório cujo caminho seja mais curto.</value>
   </data>
   <data name="UnknownWrapperLaunchErrorTitle" xml:space="preserve">
-    <value>Erreur inconnue</value>
+    <value>Erro desconhecido</value>
   </data>
   <data name="WelcomeTip" xml:space="preserve">
-    <value>Cette icône de zone de notification contrôle Freenet, faire un clic droit ouvre un menu.</value>
+    <value>Este ícone de bandeja controla o nó Freenet. Um clique com o botão esquerdo abre a Freenet e com o botão direito um menu.</value>
   </data>
   <data name="WrapperFileNotFound" xml:space="preserve">
-    <value>L&apos;exécutable Wrapper n&apos;a pas été trouvé à &apos;{0}&apos;.</value>
+    <value>Executável de encapsulador não encontrado em &apos;{0}&apos;.</value>
   </data>
 </root>

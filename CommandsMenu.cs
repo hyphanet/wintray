@@ -96,7 +96,11 @@ namespace FreenetTray
                 }
                 catch (NodeController.MissingConfigValueException e)
                 {
+                    // If the configuration files exist but are missing required
+                    // values it is sufficiently surprising to warrant an error
+                    // dialog.
                     Log.Error(strings.MalformedConfig, e.Filename, e.Value);
+                    MessageBox.Show(String.Format(strings.MalformedConfig, e.Filename, e.Value), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 // TODO: Explain what happened to prompt a custom location?
                 try

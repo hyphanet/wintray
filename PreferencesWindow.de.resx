@@ -150,7 +150,7 @@
     <value>13</value>
   </data>
   <data name="StartupLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>wahr</value>
+    <value>True</value>
   </data>
   <data name="StartupLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -258,7 +258,7 @@
     <value>9</value>
   </data>
   <data name="BrowserLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>wahr</value>
+    <value>True</value>
   </data>
   <data name="BrowserLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -288,7 +288,7 @@
     <value>8</value>
   </data>
   <data name="BehaviorLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>wahr</value>
+    <value>True</value>
   </data>
   <data name="BehaviorLabel.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -318,7 +318,7 @@
     <value>7</value>
   </data>
   <data name="SlowStartOption.AutoSize" type="System.Boolean, mscorlib">
-    <value>wahr</value>
+    <value>True</value>
   </data>
   <data name="SlowStartOption.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -348,7 +348,7 @@
     <value>6</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>wahr</value>
+    <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -417,7 +417,7 @@
     <value>4</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>wahr</value>
+    <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>

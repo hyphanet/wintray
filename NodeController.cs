@@ -69,7 +69,7 @@ namespace FreenetTray
                 Exception configException = null;
                 foreach (var path in new[]
                 {
-                    ".",
+                    Directory.GetCurrentDirectory(),
                     Environment.ExpandEnvironmentVariables(@"%LocalAppData%\Freenet"),
                 })
                 {

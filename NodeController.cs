@@ -308,8 +308,6 @@ namespace FreenetTray
                 }
                 catch (InvalidOperationException)
                 {
-                    // TODO: Resolve config file to full path?
-                    Log.Error("freenet.ini does not define {0}.", key);
                     throw new MissingConfigValueException(FreenetIniFilename, key);
                 }
             }

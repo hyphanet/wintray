@@ -124,7 +124,7 @@
     <value>选择 Freenet 安装到的文件夹。</value>
   </data>
   <data name="FreenetStarting" xml:space="preserve">
-    <value>Firefox 正在启动。</value>
+    <value>Freenet 正在启动。</value>
   </data>
   <data name="MalformedConfig" xml:space="preserve">
     <value>配置文件 &apos;{0}&apos; 没有包含有效的 &apos;{1}&apos; 值。</value>

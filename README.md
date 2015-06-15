@@ -5,13 +5,10 @@ This is a replacement for the AutoHotKey tray application. It aims to have more 
 It uses .NET 3.5 because it is [distributed with 7](http://msdn.microsoft.com/en-us/library/bb822049%28v=vs.110%29.aspx), which is [still supported](http://windows.microsoft.com/en-us/windows/lifecycle) and has a significant market share unlike Vista. 3.0 doesn't include some useful things. Existing installs can continue to use the old application.
 
 TODO:
-	Can the ntservice parts of wrapper.conf be removed?
-	Installer should set language in freenet.ini to the one it was told to use.
-	Allow one instance open at a time. If another instance is given a command line command pass it to the existing instance.
 
-TODO:
-	How to handle this upgrade?
-	Bundle .NET runtime / redistributable? Is XP worth supporting? Yeah - 20% market share still. :( Still, they use the old one because XP did not ship with .NET.
+* Can the ntservice parts of wrapper.conf be removed?
+* Installer should set language in freenet.ini to the one it was told to use.
+* Allow one instance open at a time. If another instance is given a command line command pass it to the existing instance.
 
 Menu items | command line options:
 

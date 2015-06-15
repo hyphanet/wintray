@@ -49,8 +49,8 @@ namespace FreenetTray.Browsers
                 return false;
             }
             /*
-             * Firefox 20 and later support -private-window:
-             *      "Opens a new private browsing window in an existing instance of Firefox."
+             * Firefox 29 and later support -private-window <URL>:
+             *      "Open URL in a new private browsing window."
              *
              * See https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options?redirectlocale=en-US&redirectslug=Command_Line_Options#-private
              */
@@ -60,7 +60,7 @@ namespace FreenetTray.Browsers
 
         public bool IsAvailable()
         {
-            return _isInstalled && _version >= new Version(20, 0);
+            return _isInstalled && _version >= new Version(29, 0);
         }
 
         public string GetName()

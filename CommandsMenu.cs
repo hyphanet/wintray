@@ -145,12 +145,6 @@ namespace FreenetTray
 
             BeginInvoke(new Action(() =>
             {
-                /*
-                 * TODO: Programatic way to get loopback address? This would not support IPv6.
-                 * Use FProxy bind interface?
-                 */
-                var sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                var loopback = new IPAddress(new byte[] {127, 0, 0, 1});
                 var fproxyListening = false;
                 var showSlowOpen = Settings.Default.ShowSlowOpenTip;
                 var openArgs = e as OpenArgs;
@@ -158,6 +152,13 @@ namespace FreenetTray
                 {
                     showSlowOpen = openArgs.ShowSlow;
                 }
+
+                /*
+                 * TODO: Programatic way to get loopback address? This would not support IPv6.
+                 * Use FProxy bind interface?
+                 */
+                var sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                var loopback = new IPAddress(new byte[] { 127, 0, 0, 1 });
 
                 var timer = new Stopwatch();
 

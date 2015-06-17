@@ -48,7 +48,7 @@ Start Freenet.
 
 Stop Freenet.
 
-## Open downloads directory | -downloads
+### Open downloads directory | -downloads
 
 Open the downloads directory in Windows Explorer.
 

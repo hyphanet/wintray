@@ -7,6 +7,16 @@
 
 This is a replacement for the AutoHotKey tray application. It aims to have more robust localization support, not be false-positived by overzelous antivirus hueristics that hate scripting languages, and have a few more features: setting which browser to open and hiding the tray icon.
 
+## Screenshots
+
+![Tray icon](Screenshots/icon.png)
+
+![Running](Screenshots/running_menu.png)
+
+![Stopped](Screenshots/stopped_menu.png)
+
+![Preferences window](Screenshots/preferences.png)
+
 It uses .NET 3.5 because it is [distributed with 7](http://msdn.microsoft.com/en-us/library/bb822049%28v=vs.110%29.aspx), which is [still supported](http://windows.microsoft.com/en-us/windows/lifecycle) and has a significant market share unlike Vista. 3.0 doesn't include some useful things. Existing installs can continue to use the old application.
 
 TODO:

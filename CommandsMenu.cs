@@ -157,38 +157,38 @@ namespace FreenetTray
                  * TODO: Programatic way to get loopback address? This would not support IPv6.
                  * Use FProxy bind interface?
                  */
-                var sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 var loopback = new IPAddress(new byte[] { 127, 0, 0, 1 });
 
                 var timer = new Stopwatch();
 
-                timer.Start();
-                while (_node.IsRunning())
+                using (var sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
                 {
-                    try
+                    timer.Start();
+                    while (_node.IsRunning())
                     {
-                        sock.Connect(loopback, _node.FProxyPort);
-                        fproxyListening = true;
-                        break;
-                    }
-                    catch (SocketException ex)
-                    {
-                        Log.Debug("Connecting got error: {0}",
-                                  Enum.GetName(typeof(SocketError), ex.SocketErrorCode));
-                        Thread.Sleep(SocketPollInterval);
-                    }
+                        try
+                        {
+                            sock.Connect(loopback, _node.FProxyPort);
+                            fproxyListening = true;
+                            break;
+                        }
+                        catch (SocketException ex)
+                        {
+                            Log.Debug("Connecting got error: {0}",
+                                Enum.GetName(typeof (SocketError), ex.SocketErrorCode));
+                            Thread.Sleep(SocketPollInterval);
+                        }
 
-                    // Show a startup notification if it's taking a while.
-                    if (showSlowOpen && timer.ElapsedMilliseconds > SlowOpenThreshold)
-                    {
-                        trayIcon.BalloonTipText = strings.FreenetStarting;
-                        trayIcon.ShowBalloonTip(SlowOpenTimeout);
-                        showSlowOpen = false;
+                        // Show a startup notification if it's taking a while.
+                        if (showSlowOpen && timer.ElapsedMilliseconds > SlowOpenThreshold)
+                        {
+                            trayIcon.BalloonTipText = strings.FreenetStarting;
+                            trayIcon.ShowBalloonTip(SlowOpenTimeout);
+                            showSlowOpen = false;
+                        }
                     }
+                    timer.Stop();
                 }
-                timer.Stop();
-
-                sock.Close();
 
                 if (fproxyListening)
                 {

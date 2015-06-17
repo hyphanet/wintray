@@ -27,7 +27,7 @@ namespace FreenetTray
         private const int SlowOpenTimeout = 5000;
         private const int WelcomeTimeout = 10000;
 
-        public const string logTargetName = "logFile";
+        public const string LogTargetName = "logFile";
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
@@ -39,7 +39,7 @@ namespace FreenetTray
 
             var config = new LoggingConfiguration();
             var target = new FileTarget {FileName = "${basedir}/FreenetTray.log"};
-            config.AddTarget(logTargetName, target);
+            config.AddTarget(LogTargetName, target);
             var rule = new LoggingRule("*", LogLevel.FromString(Settings.Default.LogLevel), target);
             config.LoggingRules.Add(rule);
             LogManager.Configuration = config;

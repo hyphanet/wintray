@@ -16,7 +16,7 @@ namespace FreenetTray
         private const string RegistryStartupName = "Freenet";
         private const string StartupKeyLocation = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
 
-        private readonly string InitialCustomLocation;
+        private readonly string _initialCustomLocation;
 
         public PreferencesWindow(IEnumerable<string> availableBrowsers)
         {
@@ -45,7 +45,7 @@ namespace FreenetTray
             LogLevelChoice.Text = Properties.Settings.Default.LogLevel;
 
             CustomLocationDisplay.Text = Properties.Settings.Default.CustomLocation;
-            InitialCustomLocation = Properties.Settings.Default.CustomLocation;
+            _initialCustomLocation = Properties.Settings.Default.CustomLocation;
         }
 
         private void Apply_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace FreenetTray
                 SetStartupArguments(null);
             }
 
-            if (InitialCustomLocation != CustomLocationDisplay.Text)
+            if (_initialCustomLocation != CustomLocationDisplay.Text)
             {
                 // TODO: Reload config without restart? What would be the difference?
                 Application.Restart();

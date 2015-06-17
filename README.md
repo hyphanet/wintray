@@ -48,6 +48,10 @@ Start Freenet.
 
 Stop Freenet.
 
+## Open downloads directory | -downloads
+
+Open the downloads directory in Windows Explorer.
+
 ### View logs | -logs
 
 Open `wrapper.log` in notepad.

@@ -282,6 +282,9 @@ namespace FreenetTray
                     case "-stop":
                         stopFreenetMenuItem_Click();
                         break;
+                    case "-downloads":
+                        downloadsMenuItem_Click();
+                        break;
                     case "-logs":
                         viewLogsMenuItem_Click();
                         break;
@@ -310,7 +313,7 @@ namespace FreenetTray
             public bool ShowSlow { get; set; }
         }
 
-        private void downloadsMenuItem_Click(object sender, EventArgs e)
+        private void downloadsMenuItem_Click(object sender = null, EventArgs e = null)
         {
             Process.Start("explorer.exe", _node.DownloadsDir);
         }

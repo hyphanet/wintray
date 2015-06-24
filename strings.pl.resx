@@ -121,13 +121,13 @@
     <value>Poniższe szczegóły pozwolą w dostarczeniu pomocy</value>
   </data>
   <data name="ChooseCustomLocation" xml:space="preserve">
-    <value>Choose the folder Freenet is installed to.</value>
+    <value>Wybierz katalog, w którym jest zainstalowany Freenet</value>
   </data>
   <data name="FreenetStarting" xml:space="preserve">
     <value>Freenet się uruchamia</value>
   </data>
   <data name="MalformedConfig" xml:space="preserve">
-    <value>The configuration file &apos;{0}&apos; does not contain a valid value for &apos;{1}&apos;.</value>
+    <value>Plik konfiguracyjny &apos;{0}&apos; nie zawiera prawidłowej wartości dla &apos;{1}&apos;</value>
   </data>
   <data name="PathTooLong" xml:space="preserve">
     <value>Ścieszka jest zbyt długa. Zainstaluj Freenet w folderze z krótszą ścieszką</value>
@@ -139,6 +139,6 @@
     <value>Ta ikona kontroluje Freenet. Lewy klawisz myszy otwiera Freenet a prawy otwiera menu</value>
   </data>
   <data name="WrapperFileNotFound" xml:space="preserve">
-    <value>Wrapper executable was not found at &apos;{0}&apos;.</value>
+    <value>Plik wykonywalny klasy opakowującej nie został znaleziony w &apos;{0}&apos;.</value>
   </data>
 </root>

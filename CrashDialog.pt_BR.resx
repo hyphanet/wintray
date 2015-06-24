@@ -253,7 +253,7 @@
     <value>6</value>
   </data>
   <data name="RestartButton.Text" xml:space="preserve">
-    <value>Restart</value>
+    <value>Reiniciar</value>
   </data>
   <data name="&gt;&gt;RestartButton.Name" xml:space="preserve">
     <value>RestartButton</value>
@@ -277,7 +277,7 @@
     <value>7</value>
   </data>
   <data name="CloseButton.Text" xml:space="preserve">
-    <value>Close</value>
+    <value>Fechar</value>
   </data>
   <data name="&gt;&gt;CloseButton.Name" xml:space="preserve">
     <value>CloseButton</value>

@@ -183,7 +183,7 @@
     <value>152, 22</value>
   </data>
   <data name="preferencesMenuItem.Text" xml:space="preserve">
-    <value>Preferences</value>
+    <value>Preferências</value>
   </data>
   <data name="hideIconMenuItem.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>

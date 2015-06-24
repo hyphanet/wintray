@@ -17,6 +17,8 @@ This Windows tray application allows starting and stopping Freenet, and opening 
 
 ![Preferences window](Screenshots/preferences.png)
 
+![Crash dialog](Screenshots/crash.png)
+
 ## Motivation
 
 This is a replacement for the AutoHotKey tray application. It aims to have more robust localization support, not be false-positived by overzealous antivirus heuristics that hate scripting languages, and have a few more features: setting which browser to open and hiding the tray icon.

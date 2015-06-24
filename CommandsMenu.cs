@@ -193,7 +193,7 @@ namespace FreenetTray
                 if (fproxyListening)
                 {
                     Log.Debug("FProxy listening after {0}", timer.Elapsed);
-                    BrowserUtil.Open(new Uri(String.Format("http://localhost:{0:d}", _node.FProxyPort)));
+                    BrowserUtil.Open(new Uri(String.Format("http://localhost:{0:d}", _node.FProxyPort)), true);
                 }
             }));
         }

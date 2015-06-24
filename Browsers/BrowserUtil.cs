@@ -38,10 +38,10 @@ namespace FreenetTray.Browsers
 
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
-        public static void Open(Uri target)
+        public static void Open(Uri target, Boolean incognitoParameter = false)
         {
             // For first run setup purposes FProxy should know whether it's opened in private browsing mode.
-            var privateTarget = new Uri(target, "?incognito=true");
+            var privateTarget = new Uri(target, incognitoParameter ? "?incognito=true" : "");
 
             if (Properties.Settings.Default.UseBrowser != Auto)
             {

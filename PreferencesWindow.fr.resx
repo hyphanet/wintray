@@ -363,7 +363,7 @@
     <value>8</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Historique pour debug</value>
+    <value>Historique pour débogage</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -381,7 +381,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="LogLevelChoice.Items" xml:space="preserve">
-    <value>Off</value>
+    <value>Désactivé</value>
   </data>
   <data name="LogLevelChoice.Items1" xml:space="preserve">
     <value>Erreur</value>
@@ -393,7 +393,7 @@
     <value>Info</value>
   </data>
   <data name="LogLevelChoice.Items4" xml:space="preserve">
-    <value>Debug</value>
+    <value>Débogage</value>
   </data>
   <data name="LogLevelChoice.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 177</value>

@@ -174,7 +174,7 @@
     <value>152, 22</value>
   </data>
   <data name="viewLogsMenuItem.Text" xml:space="preserve">
-    <value>View log</value>
+    <value>Visualizar log</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 6</value>
@@ -192,13 +192,13 @@
     <value>152, 22</value>
   </data>
   <data name="hideIconMenuItem.Text" xml:space="preserve">
-    <value>Hide icon</value>
+    <value>Ocultar ícone</value>
   </data>
   <data name="exitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
   </data>
   <data name="exitMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>Sair</value>
   </data>
   <data name="contextMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 214</value>

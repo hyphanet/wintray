@@ -154,7 +154,7 @@
     <value>2</value>
   </data>
   <data name="crashMessageLabel.Text" xml:space="preserve">
-    <value>Freenet à planté! Regardez le fichier de logs pour plus de détails. Pour plus d&apos;aide, contactez le support via le chat ou la mailing liste.</value>
+    <value>Freenet a planté ! Regardez le fichier de logs pour plus de détails. Pour plus d&apos;aide, contactez le support via le chat ou la liste de diffusion.</value>
   </data>
   <data name="&gt;&gt;crashMessageLabel.Name" xml:space="preserve">
     <value>crashMessageLabel</value>
@@ -181,7 +181,7 @@
     <value>3</value>
   </data>
   <data name="ViewLogButton.Text" xml:space="preserve">
-    <value>View log file</value>
+    <value>Voir l&apos;historique</value>
   </data>
   <data name="&gt;&gt;ViewLogButton.Name" xml:space="preserve">
     <value>ViewLogButton</value>
@@ -229,7 +229,7 @@
     <value>5</value>
   </data>
   <data name="MailingListButton.Text" xml:space="preserve">
-    <value>Ouvrir la mailing liste</value>
+    <value>Ouvrir la liste de diffusion</value>
   </data>
   <data name="&gt;&gt;MailingListButton.Name" xml:space="preserve">
     <value>MailingListButton</value>
@@ -893,7 +893,7 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Freenet Crashed</value>
+    <value>Freenet a planté</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>CrashDialog</value>

@@ -154,7 +154,7 @@
     <value>2</value>
   </data>
   <data name="crashMessageLabel.Text" xml:space="preserve">
-    <value>Freenet crashed! The log file has details. For help you can ask people on the support chat or mailing list.</value>
+    <value>Freenet crashed! See the log file for details. For help you can ask people on the support chat or mailing list.</value>
   </data>
   <data name="&gt;&gt;crashMessageLabel.Name" xml:space="preserve">
     <value>crashMessageLabel</value>

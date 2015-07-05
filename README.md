@@ -86,3 +86,9 @@ which filters strings which do not need to be translated. The script uses
 This is because Transifex displays all `ResX` entries, but the Windows Forms
 Designer includes things like button size and font which do not need to be
 translated.
+
+## Feature requests and reporting bugs
+
+Please file any bugs or feature requests on the
+[Freenet Project issue tracker](https://bugs.freenetproject.org/bug_report_page.php)
+in the `wininstaller` category.

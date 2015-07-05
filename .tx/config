@@ -1,0 +1,26 @@
+[main]
+host = https://www.transifex.com
+
+[freenet.windows-tray-common]
+file_filter = strings.<lang>.resx
+source_file = strings.resx
+source_lang = en
+type = RESX
+
+[freenet.windows-tray-crash]
+file_filter = CrashDialog.<lang>.resx
+source_file = CrashDialog.resx
+source_lang = en
+type = RESX
+
+[freenet.windows-tray-commands]
+file_filter = CommandsMenu.<lang>.resx
+source_file = CommandsMenu.resx
+source_lang = en
+type = RESX
+
+[freenet.windows-tray-preferences]
+file_filter = PreferencesWindow.<lang>.resx
+source_file = PreferencesWindow.resx
+source_lang = en
+type = RESX

@@ -69,3 +69,20 @@ Hide the icon by closing the tray application. If Freenet is stopped this menu e
 ### Exit | -exit
 
 Stop Freenet if it is running and close the tray application.
+
+## Translations
+
+Translations are primarily contributed through Transifex:
+
+* [Commands](https://www.transifex.com/projects/p/freenet/resource/windows-tray-commands/)
+* [Common](https://www.transifex.com/projects/p/freenet/resource/windows-tray-common/)
+* [Crash](https://www.transifex.com/projects/p/freenet/resource/windows-tray-crash/)
+* [Preferences](https://www.transifex.com/projects/p/freenet/resource/windows-tray-preferences/)
+
+The `<resource>.en.resx` files are made with the `wintray-filter-resx` script
+which filters strings which do not need to be translated. The script uses
+`filter-resx` from the [scripts repository](https://github.com/freenet/scripts/blob/master/filter-resx).
+
+This is because Transifex displays all `ResX` entries, but the Windows Forms
+Designer includes things like button size and font which do not need to be
+translated.

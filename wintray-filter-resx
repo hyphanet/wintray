@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Requires clone of `scripts` repository in parent directory:
+# https://github.com/freenet/scripts/
+
+for name in "CrashDialog" "PreferencesWindow"
+do
+    ../scripts/filter-resx ${name}.resx ${name}.en.resx || exit
+done
+
+# The CommandsMenu window is not shown - its title is not used.
+name=CommandsMenu
+../scripts/filter-resx ${name}.resx ${name}.en.resx '$this.Text' || exit

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-../scripts/filter-resx CrashDialog.resx CrashDialog.en.resx
-../scripts/filter-resx PreferencesWindow.resx PreferencesWindow.en.resx --include StartupCheckboxList.Items --include StartupCheckboxList.Items1
-../scripts/filter-resx CommandsMenu.resx CommandsMenu.en.resx --exclude '$this.Text'

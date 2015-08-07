@@ -8,7 +8,7 @@ namespace FreenetTray.Browsers
     class Chrome : IBrowser
     {
         /*
-         * Google Chrome does not maintain a registry entry with a path to its exutable.
+         * Google Chrome does not maintain a registry entry with a path to its executable.
          * Usual Google Chrome installation locations:
          * See https://code.google.com/p/selenium/source/browse/java/client/src/org/openqa/selenium/browserlaunchers/locators/GoogleChromeLocator.java#63
          */

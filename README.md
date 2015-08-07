@@ -5,7 +5,14 @@
        src="https://scan.coverity.com/projects/5458/badge.svg"/>
 </a>
 
-This Windows tray application allows starting and stopping Freenet, and opening browsers. ([supported browsers](Browsers/)) It opens Freenet when left-clicked and offers a menu when right-clicked.
+This Windows tray application allows starting and stopping Freenet, and opening browsers. It opens Freenet when left-clicked and offers a menu when right-clicked.
+
+## Supported Browsers
+
+* [Chrome](Browsers/Chrome.cs)
+* [Firefox](Browsers/Firefox.cs) 29+
+* [Opera](Browsers/Opera.cs) 21 - 25
+* [Internet Explorer](Browsers/InternetExplorer.cs) 8+
 
 ## Screenshots
 

@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdditionalCrashInfo" xml:space="preserve">
-    <value>Les détails suivants aideront les gens à fournir de l&apos;assistance :</value>
+    <value>Les détails suivants aideront à obtenir de l&apos;assistance :</value>
   </data>
   <data name="ChooseCustomLocation" xml:space="preserve">
-    <value>Choisissez le dossier dans lequel Freenet est installé.</value>
+    <value>Choisir le dossier dans lequel Freenet est installé.</value>
   </data>
   <data name="FreenetStarting" xml:space="preserve">
     <value>Freenet démarre.</value>
@@ -136,7 +136,7 @@
     <value>Erreur inconnue</value>
   </data>
   <data name="WelcomeTip" xml:space="preserve">
-    <value>Cette icône de zone de notification contrôle Freenet, faire un clic droit ouvre un menu.</value>
+    <value>Cette icône de la zone de notification contrôle Freenet. Cliquer à gauche ouvre Freenet et à droite ouvre le menu.</value>
   </data>
   <data name="WrapperFileNotFound" xml:space="preserve">
     <value>L&apos;exécutable Wrapper n&apos;a pas été trouvé à &apos;{0}&apos;.</value>

@@ -60,6 +60,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  <data name="StartupCheckboxList.Items" xml:space="preserve">
+    <value>在我登录 Windows 后显示托盘图标</value>
+  </data>
+  <data name="StartupCheckboxList.Items1" xml:space="preserve">
+    <value>在我登录 Windows 后启动 Freenet</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="StartupLabel.Text" xml:space="preserve">
     <value>启动</value>

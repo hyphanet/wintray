@@ -63,13 +63,13 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <data name="crashMessageLabel.Text" xml:space="preserve">
-    <value>Freenet crashed! See the log file for details. For help you can ask people on the support chat or mailing list.</value>
+    <value>Freenet parou de funcionar! Visualize o arquivo de log para detalhes. Para ajuda, você pode perguntar no bate-papo do suporte ou lista de discussão.</value>
   </data>
   <data name="ViewLogButton.Text" xml:space="preserve">
     <value>Visualizar arquivo de log</value>
   </data>
   <data name="SupportChatButton.Text" xml:space="preserve">
-    <value>Open support chat</value>
+    <value>Abrir bate-papo do suporte</value>
   </data>
   <data name="MailingListButton.Text" xml:space="preserve">
     <value>Abrir lista de discussão</value>
@@ -84,6 +84,6 @@
     <value>True</value>
   </metadata>
   <data name="$this.Text" xml:space="preserve">
-    <value>Freenet Crashed</value>
+    <value>Freenet parou de funcionar</value>
   </data>
   </root>

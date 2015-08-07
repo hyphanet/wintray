@@ -68,13 +68,13 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
   <data name="openFreenetMenuItem.Text" xml:space="preserve">
-    <value>Open Freenet</value>
+    <value>Abrir Freenet</value>
   </data>
   <data name="startFreenetMenuItem.Text" xml:space="preserve">
     <value>Iniciar Freenet</value>
   </data>
   <data name="stopFreenetMenuItem.Text" xml:space="preserve">
-    <value>Stop Freenet</value>
+    <value>Parar Freenet</value>
   </data>
   <data name="downloadsMenuItem.Text" xml:space="preserve">
     <value>Downloads</value>

@@ -128,6 +128,12 @@
     <EmbeddedResource Include="CommandsMenu.el.resx">
       <DependentUpon>CommandsMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommandsMenu.es.resx">
+      <DependentUpon>CommandsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandsMenu.fa-IR.resx">
+      <DependentUpon>CommandsMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommandsMenu.fi.resx">
       <DependentUpon>CommandsMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,13 +149,28 @@
     <EmbeddedResource Include="CommandsMenu.nl.resx">
       <DependentUpon>CommandsMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CommandsMenu.pt-BR.resx">
+      <DependentUpon>CommandsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandsMenu.pt-PT.resx">
+      <DependentUpon>CommandsMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CommandsMenu.resx">
+      <DependentUpon>CommandsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandsMenu.zh-CN.resx">
       <DependentUpon>CommandsMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrashDialog.de.resx">
       <DependentUpon>CrashDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrashDialog.el.resx">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrashDialog.es.resx">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrashDialog.fa-IR.resx">
       <DependentUpon>CrashDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrashDialog.fi.resx">
@@ -167,13 +188,31 @@
     <EmbeddedResource Include="CrashDialog.nl.resx">
       <DependentUpon>CrashDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrashDialog.pt-BR.resx">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrashDialog.pt-PT.resx">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrashDialog.resx">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrashDialog.sr.resx">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrashDialog.zh-CN.resx">
       <DependentUpon>CrashDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreferencesWindow.de.resx">
       <DependentUpon>PreferencesWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreferencesWindow.el.resx">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreferencesWindow.es.resx">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreferencesWindow.fa-IR.resx">
       <DependentUpon>PreferencesWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreferencesWindow.fi.resx">
@@ -191,7 +230,19 @@
     <EmbeddedResource Include="PreferencesWindow.nl.resx">
       <DependentUpon>PreferencesWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PreferencesWindow.pt-BR.resx">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreferencesWindow.pt-PT.resx">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PreferencesWindow.resx">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreferencesWindow.sr.resx">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreferencesWindow.zh-CN.resx">
       <DependentUpon>PreferencesWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="strings.de.resx" />
@@ -206,7 +257,8 @@
     <EmbeddedResource Include="strings.it.resx" />
     <EmbeddedResource Include="strings.nl.resx" />
     <EmbeddedResource Include="strings.pl.resx" />
-    <EmbeddedResource Include="strings.pt_BR.resx" />
+    <EmbeddedResource Include="strings.pt-BR.resx" />
+    <EmbeddedResource Include="strings.pt-PT.resx" />
     <EmbeddedResource Include="strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>strings.Designer.cs</LastGenOutput>
@@ -221,7 +273,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="strings.zh_CN.resx" />
+    <EmbeddedResource Include="strings.zh-CN.resx" />
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

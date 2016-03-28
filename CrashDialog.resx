@@ -154,7 +154,7 @@
     <value>2</value>
   </data>
   <data name="crashMessageLabel.Text" xml:space="preserve">
-    <value>Freenet crashed! See the log file for details. For help you can ask people on the support chat or mailing list.</value>
+    <value>Freenet crashed! See the log file for details. For help you can ask people on the support site or mailing list.</value>
   </data>
   <data name="&gt;&gt;crashMessageLabel.Name" xml:space="preserve">
     <value>crashMessageLabel</value>
@@ -205,7 +205,7 @@
     <value>4</value>
   </data>
   <data name="SupportChatButton.Text" xml:space="preserve">
-    <value>Open support chat</value>
+    <value>Open support site</value>
   </data>
   <data name="&gt;&gt;SupportChatButton.Name" xml:space="preserve">
     <value>SupportChatButton</value>

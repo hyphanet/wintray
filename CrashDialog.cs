@@ -47,7 +47,7 @@ namespace FreenetTray
 
         private void SupportChatButton_Click(object sender, EventArgs e)
         {
-            BrowserUtil.Open(new Uri("https://freenetproject.org/irc.html"));
+            BrowserUtil.Open(new Uri("https://freenetproject.org/help.html#support"));
         }
 
         private void MailingListButton_Click(object sender, EventArgs e)

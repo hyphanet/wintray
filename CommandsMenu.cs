@@ -224,14 +224,34 @@ namespace FreenetTray
             Application.Exit();
         }
 
+        /*
+         * Stop the node if it is running, wait for it to exit, then quit the tray.
+         */
         private void exitMenuItem_Click(object sender = null, EventArgs e = null)
         {
             if (_node != null)
             {
-                _node.Stop();
+                /*
+                 * Register an event handler for the exit, but if the node is already
+                 * stopped exit immediately because the event would never fire. This
+                 * order of checking avoids missing a node exit: if the check came
+                 * before the handler was registered, the node could exit between
+                 * the check and the handler registration and the tray would hang.
+                 */
+                _node.OnStopped += (o, args) => Application.Exit();
+                if (!_node.IsRunning())
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    _node.Stop();
+                }
             }
-
-            Application.Exit();
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void trayIcon_MouseClick(object sender, MouseEventArgs e)

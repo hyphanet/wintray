@@ -75,7 +75,7 @@ Hide the icon by closing the tray application. If Freenet is stopped this menu e
 
 ### Exit | -exit
 
-Stop Freenet if it is running and close the tray application.
+Stop Freenet if it is running, wait for it to exit, then close the tray application.
 
 ## Translations
 

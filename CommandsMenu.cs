@@ -143,7 +143,7 @@ namespace FreenetTray
         {
             Start();
 
-            BeginInvoke(new Action(() =>
+            var pollFproxy = new Thread(() =>
             {
                 var fproxyListening = false;
                 var showSlowOpen = Settings.Default.ShowSlowOpenTip;
@@ -182,8 +182,11 @@ namespace FreenetTray
                         // Show a startup notification if it's taking a while.
                         if (showSlowOpen && timer.ElapsedMilliseconds > SlowOpenThreshold)
                         {
-                            trayIcon.BalloonTipText = strings.FreenetStarting;
-                            trayIcon.ShowBalloonTip(SlowOpenTimeout);
+                            BeginInvoke(new Action(() =>
+                            {
+                                trayIcon.BalloonTipText = strings.FreenetStarting;
+                                trayIcon.ShowBalloonTip(SlowOpenTimeout);
+                            }));
                             showSlowOpen = false;
                         }
                     }
@@ -195,7 +198,8 @@ namespace FreenetTray
                     Log.Debug("FProxy listening after {0}", timer.Elapsed);
                     BrowserUtil.Open(new Uri(String.Format("http://localhost:{0:d}", _node.FProxyPort)), true);
                 }
-            }));
+            });
+            pollFproxy.Start();
         }
 
         private void startFreenetMenuItem_Click(object sender = null, EventArgs e = null)

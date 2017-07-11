@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using NLog;
 
 namespace FreenetTray
 {
@@ -35,8 +34,6 @@ namespace FreenetTray
         private const int ERROR_FILE_NOT_FOUND = 0x2;
         private const int ERROR_INSUFFICIENT_BUFFER = 0x7A;
         private const int ERROR_ACCESS_DENIED = 0x5;
-
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         public delegate void CrashHandler(CrashType type);
 
@@ -107,7 +104,7 @@ namespace FreenetTray
 
                 if (configException != null)
                 {
-                    Log.Error("Failed to detect Freenet installation.", configException);
+                    FNLog.Error("Failed to detect Freenet installation.", configException);
                     throw configException;
                 }
             }
@@ -130,7 +127,7 @@ namespace FreenetTray
             }
             catch (ArgumentException)
             {
-                Log.Debug("No process has the PID in the PID file.");
+                FNLog.Debug("No process has the PID in the PID file.");
                 // The wrapper can refuse to start if there is a stale PID file - "strict".
                 try
                 {
@@ -139,20 +136,20 @@ namespace FreenetTray
                 catch (IOException)
                 {
                     // TODO: Be louder about this? Or will the wrapper fail to start and exit nonzero?
-                    Log.Debug("Stale PID file is still held.");
+                    FNLog.Debug("Stale PID file is still held.");
                 }
             }
             catch (FormatException)
             {
-                Log.Debug("PID file does not contain an integer.");
+                FNLog.Debug("PID file does not contain an integer.");
             }
             catch (OverflowException)
             {
-                Log.Debug("PID file does not contain an integer.");
+                FNLog.Debug("PID file does not contain an integer.");
             }
             catch (FileNotFoundException)
             {
-                Log.Debug("PID file not found.");
+                FNLog.Debug("PID file not found.");
             }
 
             /*
@@ -192,17 +189,16 @@ namespace FreenetTray
                 switch (ex.NativeErrorCode)
                 {
                     case ERROR_FILE_NOT_FOUND:
-                        Log.Error("Cannot start Freenet: wrapper executable not found.");
+                        FNLog.Error("Cannot start Freenet: wrapper executable not found.");
                         OnCrashed(CrashType.WrapperFileNotFound);
                         return;
                     case ERROR_INSUFFICIENT_BUFFER:
                     case ERROR_ACCESS_DENIED:
-                        Log.Error("Cannot start Freenet: the file path is too long.");
+                        FNLog.Error("Cannot start Freenet: the file path is too long.");
                         OnCrashed(CrashType.PathTooLong);
                         return;
                     default:
-                        Log.ErrorException("Cannot start Freenet: Process.Start() gave an error " +
-                                           "code it is not documented as giving.", ex);
+                        FNLog.ErrorException(ex, "Cannot start Freenet: Process.Start() gave an error code it is not documented as giving.");
                         throw;
                 }
             }
@@ -229,12 +225,12 @@ namespace FreenetTray
             // TODO: Is exit code enough to distinguish between stopping and crashing?
             if (_wrapper.ExitCode == 0)
             {
-                Log.Debug("Wrapper exited.");
+                FNLog.Debug("Wrapper exited.");
                 OnStopped(sender, e);
             }
             else
             {
-                Log.Error("Wrapper crashed. Exit code: {0}", _wrapper.ExitCode);
+                FNLog.Error("Wrapper crashed. Exit code: {0}", _wrapper.ExitCode);
                 OnCrashed(CrashType.WrapperCrashed);
             }
         }
@@ -296,7 +292,7 @@ namespace FreenetTray
                 var isValid = int.TryParse(port, out FProxyPort);
                 if (!isValid)
                 {
-                    Log.Error("fproxy.port is not an integer.");
+                    FNLog.Error("fproxy.port is not an integer.");
                     throw new MissingConfigValueException(FreenetIniFilename, "fproxy.port");
                 }
 

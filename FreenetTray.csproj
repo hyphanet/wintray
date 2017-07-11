@@ -110,6 +110,7 @@
     <Compile Include="CrashDialog.Designer.cs">
       <DependentUpon>CrashDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="MachineConfig.cs" />
     <Compile Include="NodeController.cs" />
     <Compile Include="PreferencesWindow.cs">
       <SubType>Form</SubType>

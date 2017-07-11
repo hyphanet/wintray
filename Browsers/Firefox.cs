@@ -1,11 +1,11 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 namespace FreenetTray.Browsers
 {
-    class Firefox : IBrowser
+    class Firefox: Browser
     {
         private static string CurrentVersionInRegistryView(RegistryView view) {
             string value = null;
@@ -78,9 +78,6 @@ namespace FreenetTray.Browsers
             { RegistryHive.CurrentUser, @"SOFTWARE\Mozilla\Mozilla Firefox {VersionNumber}\bin" },
         };
 
-        private readonly bool _isInstalled;
-        private readonly Version _version;
-        private readonly string _path;
         // we check manually if searching the registry failed, these are the full paths we attempt to find
         private static readonly string[] FallbackLocations = {
                                                  @"%PROGRAMFILES%\Mozilla Firefox",
@@ -89,37 +86,62 @@ namespace FreenetTray.Browsers
 
         public Firefox()
         {
-            var currentVersion = GetCurrentVersion();
-            _version = GetVersion(currentVersion);
+            // try querying the registry first to find any installed version of firefox
+            var currentVersion64 = CurrentVersionInRegistryView(RegistryView.Registry64);
+            var currentVersion32 = CurrentVersionInRegistryView(RegistryView.Registry64);
 
-            _path = GetPath(currentVersion, _version);
-            _isInstalled = _path != null;
-        }
+            var parsedVersion64 = GetVersion(currentVersion64);
+            var parsedVersion32 = GetVersion(currentVersion32);
 
-        public bool Open(Uri target)
-        {
-            if (!IsAvailable())
-            {
-                return false;
+            var isUsable64 = parsedVersion64 >= new Version(29, 0);
+            var isUsable32 = parsedVersion32 >= new Version(29, 0);
+
+
+            // check for executable paths, then decide which to prefer after we know what's available
+            var path64 = ExecutablePathInRegistryView(RegistryView.Registry64, currentVersion64, parsedVersion64);
+            var path32 = ExecutablePathInRegistryView(RegistryView.Registry32, currentVersion32, parsedVersion32);
+
+
+            var pathfallback = FallbackLocations.Select(location => Environment.ExpandEnvironmentVariables(location) + @"\firefox.exe")
+                .Where(File.Exists)
+                .FirstOrDefault();
+
+            // this explicitly allows for a case where the 64-bit version is installed but is not
+            // considered usable, we fall back to the installed 32-bit version if it is usable, and then
+            // fall back to whatever we find in the program files directory as a last resort
+            if (path64 != null && isUsable64) {
+
+                _path = path64;
+
+                _version = parsedVersion64;
+
+            } else if (path32 != null && isUsable32) {
+
+                _path = path32;
+
+                _version = parsedVersion32;
+
+            } else if (pathfallback != null) {
+
+                _path = pathfallback;
+
+                // we don't know, but it's not critical
+                _version = new System.Version(0, 0);
             }
+
+            _isInstalled = _path != null;
+
+            _isUsable = _version != null;
+
             /*
              * Firefox 29 and later support -private-window <URL>:
              *      "Open URL in a new private browsing window."
              *
              * See https://developer.mozilla.org/en-US/docs/Mozilla/Command_Line_Options?redirectlocale=en-US&redirectslug=Command_Line_Options#-private
              */
-            Process.Start(_path, "-private-window " + target);
-            return true;
-        }
+            _args = "-private-window ";
 
-        public bool IsAvailable()
-        {
-            return _isInstalled && _version >= new Version(29, 0);
-        }
-
-        public string GetName()
-        {
-            return "Firefox";
+            _name = "Firefox";
         }
 
         // Return null if the version cannot be determined.

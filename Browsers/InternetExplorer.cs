@@ -4,45 +4,40 @@ using Microsoft.Win32;
 
 namespace FreenetTray.Browsers
 {
-    class InternetExplorer : IBrowser
+    class InternetExplorer: Browser
     {
-        private readonly Version _version;
-        private readonly bool _isInstalled;
+        private static string IERegistryKey = @"Software\Microsoft\Internet Explorer";
 
         public InternetExplorer()
         {
             // See https://support.microsoft.com/kb/969393
-            var value = Registry.GetValue(@"HKEY_LOCAL_MACHINE\Software\Microsoft\Internet Explorer", "version", null);
-            if (value != null)
-            {
-                _version = new Version((string)value);
+
+            // NOTE: this is intentionally looking for the 32bit version, because it's very rare
+            // for anyone to launch IE 64-bit on purpose. However, since we're running it in
+            // private browsing mode and don't need plugins anyway, should we always prefer it?
+            RegistryKey hive = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+            RegistryKey key = hive.OpenSubKey(IERegistryKey);
+
+            if (key == null) {
+                var value = key.GetValue("version") as string;
+
+                if (value != null) {
+                    _version = new Version(value);
+                }
             }
 
             // TODO: Also check for existence of executable?
             _isInstalled = _version != null;
-        }
 
-        public bool Open(Uri target)
-        {
-            if (!IsAvailable())
-            {
-                return false;
-            }
+            // See https://en.wikipedia.org/wiki/Internet_Explorer_8#InPrivate
+            _isUsable = _version >= new Version(8, 0);
 
             // See http://msdn.microsoft.com/en-us/library/ie/hh826025%28v=vs.85%29.aspx
-            Process.Start("iexplore.exe", "-private " + target);
-            return true;
-        }
+            _args = "-private ";
 
-        public bool IsAvailable()
-        {
-            // See https://en.wikipedia.org/wiki/Internet_Explorer_8#InPrivate
-            return _isInstalled && _version >= new Version(8, 0);
-        }
+            _path = "iexplore.exe";
 
-        public string GetName()
-        {
-            return "Internet Explorer";
+            _name = "Internet Explorer";
         }
     }
 }

@@ -72,7 +72,7 @@ namespace FreenetTray
             }
         }
 
-        // TODO: Where to document? Thows FileNotFound; DirectoryNotFound
+        // TODO: Where to document? Throws FileNotFound, DirectoryNotFound, MissingJRE
         public NodeController()
         {
             if (Properties.Settings.Default.CustomLocation.Length != 0)

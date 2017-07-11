@@ -11,6 +11,8 @@ namespace FreenetTray
         [STAThread]
         static void Main()
         {
+            FNLog.Initialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new CommandsMenu());

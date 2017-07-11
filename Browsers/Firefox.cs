@@ -7,26 +7,75 @@ namespace FreenetTray.Browsers
 {
     class Firefox : IBrowser
     {
+        private static string CurrentVersionInRegistryView(RegistryView view) {
+            string value = null;
+
+            foreach (var keypair in VersionRegistryKeys) {
+                RegistryKey hive = RegistryKey.OpenBaseKey(keypair.Item1, view);
+                RegistryKey key = hive.OpenSubKey(keypair.Item2);
+                if (key == null) {
+                    return null;
+                }
+
+                value = key.GetValue("CurrentVersion") as string;
+
+                if (value != null) {
+                    break;
+                }
+            }
+
+            return value;
+        }
+
+        private static string ExecutablePathInRegistryView(RegistryView view, string currentVersion, Version version) {
+            if (currentVersion == null || version == null) {
+                return null;
+            }
+
+            string value = null;
+
+            foreach (var keypair in PathRegistryKeys) {
+                RegistryKey hive = RegistryKey.OpenBaseKey(keypair.Item1, view);
+                var query = string.Format(keypair.Item2
+                    .Replace("{CurrentVersion}", "{0}")
+                    .Replace("{VersionNumber}", "{1}"),
+                     currentVersion, version);
+
+                RegistryKey key = hive.OpenSubKey(query);
+                if (key == null) {
+                    return null;
+                }
+
+                value = key.GetValue("PathToExe") as string;
+
+                if (value != null) {
+                    break;
+                }
+            }
+
+            return value;
+        }
+
+
         /*
          * https://developer.mozilla.org/en-US/docs/Adding_Extensions_using_the_Windows_Registry
          * is out of date as of this writing - it uses "Mozilla Firefox" instead of "Firefox".
          * Earlier versions use HKEY_LOCAL_MACHINE but current ones use HKEY_CURRENT_USER.
          */
-        private static readonly string[] VersionRegistryKeys =
-        {
-            @"HKEY_LOCAL_MACHINE\SOFTWARE\Mozilla\Mozilla Firefox",
-            @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox",
-            @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Mozilla\Mozilla Firefox",
+        private static readonly TupleList<RegistryHive, string> VersionRegistryKeys = new TupleList<RegistryHive, string> {
+            // this is current as of firefox 54
+            { RegistryHive.LocalMachine, @"SOFTWARE\Mozilla\Mozilla Firefox" },
+            { RegistryHive.CurrentUser, @"SOFTWARE\Mozilla\Mozilla Firefox" },
+            { RegistryHive.CurrentConfig, @"SOFTWARE\Mozilla\Mozilla Firefox" },
         };
 
-        private static readonly string[] PathRegistryKeys =
-        {
+        private static readonly TupleList<RegistryHive, string> PathRegistryKeys = new TupleList<RegistryHive, string> {
             // CurrentVersion is {VersionNumber} {Locale}. In these keys {VersionNumber}
             // and {CurrentVersion} are replaced before lookup.
-            @"HKEY_LOCAL_MACHINE\SOFTWARE\Mozilla\Mozilla Firefox\{VersionNumber}\Main",
-            @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox\{CurrentVersion}\Main",
-            @"HKEY_CURRENT_USER\SOFTWARE\Mozilla\Mozilla Firefox {VersionNumber}\bin",
-            @"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Mozilla\Mozilla Firefox {VersionNumber}\bin",
+            { RegistryHive.LocalMachine, @"SOFTWARE\Mozilla\Mozilla Firefox\{VersionNumber}\Main" },
+            { RegistryHive.LocalMachine, @"SOFTWARE\Mozilla\Mozilla Firefox {VersionNumber}\bin" },
+            { RegistryHive.CurrentUser, @"SOFTWARE\Mozilla\Mozilla Firefox\{CurrentVersion}\Main" },
+            { RegistryHive.CurrentUser, @"SOFTWARE\Mozilla\Mozilla Firefox {VersionNumber}\bin" },
         };
 
         private readonly bool _isInstalled;
@@ -93,31 +142,6 @@ namespace FreenetTray.Browsers
             }
 
             return null;
-        }
-
-        private static string GetPath(string currentVersion, Version version)
-        {
-            if (currentVersion == null || version == null)
-            {
-                return null;
-            }
-
-            return PathRegistryKeys
-                .Select(key => Registry.GetValue(
-                    string.Format(key
-                        .Replace("{CurrentVersion}", "{0}")
-                        .Replace("{VersionNumber}", "{1}"),
-                    currentVersion, version), "PathToExe", null))
-                .Where(path => path != null)
-                .Cast<string>().FirstOrDefault();
-        }
-
-        private static string GetCurrentVersion()
-        {
-            return VersionRegistryKeys
-                .Select(key => Registry.GetValue(key, "CurrentVersion", null))
-                .Where(currentVersion => currentVersion != null)
-                .Cast<string>().FirstOrDefault();
         }
     }
 }

@@ -81,6 +81,11 @@ namespace FreenetTray.Browsers
         private readonly bool _isInstalled;
         private readonly Version _version;
         private readonly string _path;
+        // we check manually if searching the registry failed, these are the full paths we attempt to find
+        private static readonly string[] FallbackLocations = {
+                                                 @"%PROGRAMFILES%\Mozilla Firefox",
+                                                 @"%PROGRAMFILES(X86)%\Mozilla Firefox",
+                                               };
 
         public Firefox()
         {

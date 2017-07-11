@@ -101,6 +101,15 @@ namespace FreenetTray
                     // dialog.
                     Log.Error(strings.MalformedConfig, e.Filename, e.Value);
                     MessageBox.Show(String.Format(strings.MalformedConfig, e.Filename, e.Value), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
+                catch (MissingJRE e)
+                {
+                    // No JRE was found
+                    FNLog.Error(strings.JRENotFound);
+                    MessageBox.Show(strings.JRENotFound, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    /* Cannot continue for now */
+                    Application.Exit();
+                    return;
                 }
                 // TODO: Explain what happened to prompt a custom location?
                 try

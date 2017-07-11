@@ -88,6 +88,15 @@ namespace FreenetTray {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Java runtime is available.
+        /// </summary>
+        internal static string JRENotFound {
+            get {
+                return ResourceManager.GetString("JRENotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The configuration file &apos;{0}&apos; does not contain a valid value for &apos;{1}&apos;..
         /// </summary>
         internal static string MalformedConfig {

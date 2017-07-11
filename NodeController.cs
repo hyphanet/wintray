@@ -53,9 +53,24 @@ namespace FreenetTray
         public int FProxyPort { get { return _config.FProxyPort; } }
         public string DownloadsDir { get { return _config.DownloadsDir; } }
 
-        public const string WrapperFilename = @"wrapper\freenetwrapper.exe";
         private const string FreenetIniFilename = @"freenet.ini";
         private const string WrapperConfFilename = "wrapper.conf";
+
+        public static string WrapperFilename {
+            get {
+                switch (MachineConfig.GetBestAvailableJRE) {
+                    case JREType.JRE64Bit:
+                        return @"wrapper\freenetwrapper-64.exe";
+                    case JREType.JRE32Bit:
+                        return @"wrapper\freenetwrapper.exe";
+                    case JREType.None:
+                        // there is no JRE installed at all
+                        throw new MissingJRE();
+                    default:
+                        throw new MissingJRE();
+                }
+            }
+        }
 
         // TODO: Where to document? Thows FileNotFound; DirectoryNotFound
         public NodeController()

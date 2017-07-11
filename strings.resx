@@ -126,6 +126,9 @@
   <data name="FreenetStarting" xml:space="preserve">
     <value>Freenet is starting.</value>
   </data>
+  <data name="JRENotFound" xml:space="preserve">
+    <value>No Java runtime is available</value>
+  </data>
   <data name="MalformedConfig" xml:space="preserve">
     <value>The configuration file '{0}' does not contain a valid value for '{1}'.</value>
   </data>

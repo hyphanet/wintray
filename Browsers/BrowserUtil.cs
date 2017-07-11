@@ -6,22 +6,6 @@ using NLog;
 
 namespace FreenetTray.Browsers
 {
-    interface IBrowser
-    {
-        /*
-         * Return true if the URI was opened in privacy mode.
-         * Return false otherwise.
-         */
-        bool Open(Uri target);
-
-        /*
-         * Return true if pages can be opened in privacy mode.
-         * Return false otherwise.
-         */
-        bool IsAvailable();
-
-        string GetName();
-    }
 
     public static class BrowserUtil
     {

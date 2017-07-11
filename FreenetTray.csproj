@@ -92,6 +92,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Browsers\Browser.cs" />
     <Compile Include="Browsers\BrowserUtil.cs" />
     <Compile Include="Browsers\Chrome.cs" />
     <Compile Include="Browsers\Firefox.cs" />

@@ -7,9 +7,6 @@ using System.Threading;
 using System.Windows.Forms;
 using FreenetTray.Browsers;
 using FreenetTray.Properties;
-using NLog;
-using NLog.Config;
-using NLog.Targets;
 
 namespace FreenetTray
 {
@@ -27,22 +24,11 @@ namespace FreenetTray
         private const int SlowOpenTimeout = 5000;
         private const int WelcomeTimeout = 10000;
 
-        public const string LogTargetName = "logFile";
-
-        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
-
         private NodeController _node;
 
         public CommandsMenu()
         {
             InitializeComponent();
-
-            var config = new LoggingConfiguration();
-            var target = new FileTarget {FileName = "${basedir}/FreenetTray.log"};
-            config.AddTarget(LogTargetName, target);
-            var rule = new LoggingRule("*", LogLevel.FromString(Settings.Default.LogLevel), target);
-            config.LoggingRules.Add(rule);
-            LogManager.Configuration = config;
 
             FormClosed += (sender, e) => trayIcon.Visible = false;
             Shown += (sender, e) => Hide();
@@ -88,18 +74,18 @@ namespace FreenetTray
                 }
                 catch (FileNotFoundException e)
                 {
-                    Log.Error(e);
+                    FNLog.ErrorException(e, "Failed to find file");
                 }
                 catch (DirectoryNotFoundException e)
                 {
-                    Log.Error(e);
+                    FNLog.ErrorException(e, "Failed to find directory");
                 }
                 catch (NodeController.MissingConfigValueException e)
                 {
                     // If the configuration files exist but are missing required
                     // values it is sufficiently surprising to warrant an error
                     // dialog.
-                    Log.Error(strings.MalformedConfig, e.Filename, e.Value);
+                    FNLog.Error(strings.MalformedConfig, e.Filename, e.Value);
                     MessageBox.Show(String.Format(strings.MalformedConfig, e.Filename, e.Value), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 } 
                 catch (MissingJRE e)
@@ -183,7 +169,7 @@ namespace FreenetTray
                         }
                         catch (SocketException ex)
                         {
-                            Log.Debug("Connecting got error: {0}",
+                            FNLog.Debug("Connecting got error: {0}",
                                 Enum.GetName(typeof (SocketError), ex.SocketErrorCode));
                             Thread.Sleep(SocketPollInterval);
                         }
@@ -204,7 +190,7 @@ namespace FreenetTray
 
                 if (fproxyListening)
                 {
-                    Log.Debug("FProxy listening after {0}", timer.Elapsed);
+                    FNLog.Debug("FProxy listening after {0}", timer.Elapsed);
                     BrowserUtil.Open(new Uri(String.Format("http://localhost:{0:d}", _node.FProxyPort)), true);
                 }
             });

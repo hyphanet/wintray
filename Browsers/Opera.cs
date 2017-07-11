@@ -5,10 +5,8 @@ using Microsoft.Win32;
 
 namespace FreenetTray.Browsers
 {
-    class Opera : IBrowser
+    class Opera: Browser
     {
-        private readonly string _path;
-        private readonly bool _isInstalled;
 
         private static string OperaRegistryKey = @"Software\Opera Software\Last Stable Install Path";
 
@@ -69,28 +67,17 @@ namespace FreenetTray.Browsers
             {
                 _path = possiblePath;
             }
-        }
 
-        public bool Open(Uri target)
-        {
-            if (!IsAvailable())
-            {
-                return false;
-            }
+            // we don't know at the moment, but might need to add support to properly 
+            // handle the private browsing argument when it works
+            _version = new System.Version(0, 0);
 
+            _isUsable = true;
+            
             // See http://www.opera.com/docs/switches
-            Process.Start(_path, "-newprivatetab " + target);
-            return true;
-        }
+            _args = "-newprivatetab ";
 
-        public bool IsAvailable()
-        {
-            return _isInstalled;
-        }
-
-        public string GetName()
-        {
-            return "Opera";
+            _name = "Opera";
         }
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
 namespace FreenetTray.Browsers
 {
-    class Chrome : IBrowser
+    class Chrome: Browser
     {
         /*
          * Google Chrome does not maintain a registry entry with a path to its executable.
@@ -18,9 +17,6 @@ namespace FreenetTray.Browsers
                                                  @"%PROGRAMFILES(X86)%\Google\Chrome\Application",
                                                };
 
-        private readonly string _path;
-        private readonly bool _isInstalled;
-
         public Chrome()
         {
             _path = Locations
@@ -29,28 +25,16 @@ namespace FreenetTray.Browsers
                 .FirstOrDefault();
 
             _isInstalled = _path != null;
-        }
 
-        public bool Open(Uri target)
-        {
-            if (!IsAvailable())
-            {
-                return false;
-            }
+            // we don't know but it's not critical
+            _version = new System.Version(0, 0);
+
+            _isUsable = true;
 
             // See http://peter.sh/experiments/chromium-command-line-switches/
-            Process.Start(_path, "--incognito " + target);
-            return true;
-        }
+            _args = "--incognito ";
 
-        public bool IsAvailable()
-        {
-            return _isInstalled;
-        }
-
-        public string GetName()
-        {
-            return "Chrome";
+            _name = "Chrome";
         }
     }
 }

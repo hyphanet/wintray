@@ -101,7 +101,8 @@ namespace FreenetTray
         // Set the tray arguments on Windows startup, or remove if from startup if arguments is null.
         private static void SetStartupArguments(string arguments)
         {
-            using (var key = Registry.CurrentUser.OpenSubKey(StartupKeyLocation, true))
+            using (var currentUser32 = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry32))
+            using (var key = currentUser32.OpenSubKey(StartupKeyLocation, true))
             {
                 // TODO: Assuming startup registry location exists. Is this viable?
                 key.DeleteValue(RegistryStartupName, false);

@@ -11,6 +11,10 @@ namespace FreenetTray
         [STAThread]
         static void Main()
         {
+
+            // migrate settings from older config files for previous assembly versions
+            FreenetTray.Properties.Settings.Default.Upgrade();
+
             FNLog.Initialize();
 
             Application.EnableVisualStyles();

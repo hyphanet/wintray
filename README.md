@@ -1,4 +1,4 @@
-﻿# Freenet Tray Application
+# Freenet Tray Application
 
 <a href="https://scan.coverity.com/projects/5458">
   <img alt="Coverity Scan Build Status"
@@ -25,6 +25,46 @@ This Windows tray application allows starting and stopping Freenet, and opening 
 ![Preferences window](Screenshots/preferences.png)
 
 ![Crash dialog](Screenshots/crash.png)
+
+## Building
+
+FreenetTray can be built natively on Windows, or any recent Linux distribution that packages
+the `mono` framework. Note that this does not mean it will *run* on Linux (yet), only that you do
+not need to run Windows to build the tray app *for* Windows.
+
+After a build succeeds, the release should be in the `bin/Release` folder in the project root.
+
+You will need to copy both `FreenetTray.exe` and `FreenetTray.exe.config`, and deploy
+them together.
+
+### Building on Windows
+
+You will need to install:
+
+* Visual Studio 2017 (older versions should work, but 2017 is recommended, it's also free)
+* .NET 4.0 targeting pack
+
+Then click Build in Visual Studio, it should restore the nuget packages and build the release.
+
+### Building on Linux for Windows
+
+On Debian/Ubuntu, install the following packages:
+
+    mono-devel
+    mono-reference-assemblies-4.0
+    nuget
+    
+Then update nuget and restore the nuget packages:
+
+    nuget update -self
+    nuget restore
+    
+Now you should be able to build the release:
+    
+    xbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.0" /p:DebugSymbols=False FreenetTray.sln
+    
+You *may* be able to run xbuild without those options, but in certain environments they avoid
+build issues.
 
 ## Motivation
 

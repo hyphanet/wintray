@@ -27,7 +27,7 @@ namespace FreenetTray
             switch (_crashType)
             {
                 case NodeController.CrashType.WrapperFileNotFound:
-                    additional += string.Format(strings.WrapperFileNotFound, NodeController.WrapperFilename);
+                    additional += string.Format(strings.WrapperFileNotFound, NodeController.WrapperFilename());
                     break;
                 case NodeController.CrashType.PathTooLong:
                     additional += strings.PathTooLong;

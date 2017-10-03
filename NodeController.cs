@@ -53,19 +53,17 @@ namespace FreenetTray
         private const string FreenetIniFilename = @"freenet.ini";
         private const string WrapperConfFilename = "wrapper.conf";
 
-        public static string WrapperFilename {
-            get {
-                switch (MachineConfig.GetBestAvailableJRE) {
-                    case JREType.JRE64Bit:
-                        return @"wrapper\freenetwrapper-64.exe";
-                    case JREType.JRE32Bit:
-                        return @"wrapper\freenetwrapper.exe";
-                    case JREType.None:
-                        // there is no JRE installed at all
-                        throw new MissingJRE();
-                    default:
-                        throw new MissingJRE();
-                }
+        public static string WrapperFilename() {
+            switch (MachineConfig.GetBestAvailableJRE) {
+                case JREType.JRE64Bit:
+                    return @"wrapper\freenetwrapper-64.exe";
+                case JREType.JRE32Bit:
+                    return @"wrapper\freenetwrapper.exe";
+                case JREType.None:
+                    // there is no JRE installed at all
+                    throw new MissingJRE();
+                default:
+                    throw new MissingJRE();
             }
         }
 
@@ -156,7 +154,7 @@ namespace FreenetTray
              * Hide the wrapper window when launching it. This prevents (or at least heavily complicates)
              * stopping it with Process.CloseMainWindow() or by sending ctrl + C.
              */
-            _wrapperInfo.FileName = Path.Combine(_config.RelativeTo, WrapperFilename);
+            _wrapperInfo.FileName = Path.Combine(_config.RelativeTo, WrapperFilename());
             // TODO: Is it worthwhile to omit the pidfile here when it's in the config file?
             _wrapperInfo.Arguments = "-c " + WrapperConfFilename + " wrapper.pidfile=" + _config.PidFilename;
             _wrapperInfo.UseShellExecute = false;
@@ -255,7 +253,7 @@ namespace FreenetTray
                  */
                 PidFilename = "freenet.pid";
                 // wrapper.conf is relative to the wrapper's location.
-                var wrapperDir = Directory.GetParent(Path.Combine(relativeTo, WrapperFilename));
+                var wrapperDir = Directory.GetParent(Path.Combine(relativeTo, WrapperFilename()));
                 foreach (var line in File.ReadAllLines(wrapperDir.FullName + '\\' + WrapperConfFilename))
                 {
                     // TODO: Map between constants and variables to reduce repetition?

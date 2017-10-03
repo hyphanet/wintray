@@ -18,7 +18,7 @@ namespace FreenetTray.Browsers
             RegistryKey hive = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
             RegistryKey key = hive.OpenSubKey(IERegistryKey);
 
-            if (key == null) {
+            if (key != null) {
                 var value = key.GetValue("version") as string;
 
                 if (value != null) {

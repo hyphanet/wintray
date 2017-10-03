@@ -8,17 +8,28 @@ namespace FreenetTray.Browsers {
         private static string NTVersionRegistryKey = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion";
 
         public Edge() {
-            // for this key we want registry redirection enabled, so no registry view is used
-            var reg = Registry.LocalMachine.OpenSubKey(NTVersionRegistryKey);
+            RegistryKey reg = null;
 
-            string productName = reg.GetValue("ProductName") as string;
+            if (Environment.Is64BitOperatingSystem) {
+                RegistryKey local64 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
+                reg = local64.OpenSubKey(NTVersionRegistryKey);
+            } else {
+                RegistryKey local32 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32);
+                reg = local32.OpenSubKey(NTVersionRegistryKey);
+            }
+
+            if (reg != null) {
+                string productName = reg.GetValue("ProductName") as string;
+
+                _isInstalled = productName.StartsWith("Windows 10");
+            } else {
+                _isInstalled = false;
+            }
+
+            _isUsable = _isInstalled;
 
             // there's no version info but it isn't useful anyway
             _version = new System.Version(0, 0);
-
-            _isInstalled = productName.StartsWith("Windows 10");
-
-            _isUsable = _isInstalled;
 
             _args = "microsoft-edge:";
 

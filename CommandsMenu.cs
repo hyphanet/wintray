@@ -88,7 +88,7 @@ namespace FreenetTray
                     FNLog.Error(strings.MalformedConfig, e.Filename, e.Value);
                     MessageBox.Show(String.Format(strings.MalformedConfig, e.Filename, e.Value), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 } 
-                catch (MissingJRE e)
+                catch (MissingJRE)
                 {
                     // No JRE was found
                     FNLog.Error(strings.JRENotFound);

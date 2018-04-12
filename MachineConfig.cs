@@ -13,13 +13,16 @@ namespace FreenetTray {
     public class MachineConfig {
 
         private static string JRERegistryKey = @"Software\\JavaSoft\\Java Runtime Environment";
+        private static string JRERegistryKey2 = @"Software\\JavaSoft\\JRE";
+        private static string[] JREKeys = {JRERegistryKey, JRERegistryKey2};
 
         private static bool Has64BitJRE {
             get {
                 RegistryKey local64 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
-                RegistryKey jreKey64 = local64.OpenSubKey(JRERegistryKey);
-                if (jreKey64 != null) {
-                    return true;
+                foreach (var key in JREKeys)
+                {
+                    if (local64.OpenSubKey(key) != null)
+                        return true;
                 }
                 return false;
             }

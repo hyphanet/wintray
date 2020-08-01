@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      Solution_Name: "FreenetTray.sln"
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.0.0
+
+    - name: Setup NuGET
+      uses: nuget/setup-nuget@v1
+
+    - name: NuGet Restore
+      run: nuget restore "%Solution_Name%"
+      shell: cmd
+
+    - name: Build the solution
+      run: msbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.0" /p:DebugSymbols=False "%Solution_Name%"
+      shell: cmd
+
+    - name: Sign the installer
+      uses: nextgens/authenticode-sign-action@v1.0.0
+      if: ${{ github.event_name != 'pull_request' }}
+      with:
+        certificate: '${{ secrets.CERTIFICATES }}'
+        credentials: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}'
+        key-uri: "projects/fpi-codesign/locations/europe-west3/keyRings/code-signing/cryptoKeys/certificate/cryptoKeyVersions/1"
+        folder: "bin/Release"
+        recursive: true
+
+    - name: Verify the signature
+      if: ${{ github.event_name != 'pull_request' }}
+      run: call "%programfiles(x86)%/Windows Kits/10/bin/10.0.17763.0/x86/signtool.exe" verify /v /pa "bin/Release/FreenetTray.exe"
+      shell: cmd
+
+    - name: Upload the installer as an artifact
+      uses: actions/upload-artifact@v2
+      if: ${{ github.event_name != 'pull_request' }}
+      with:
+        path: "bin/Release"
+        name: wintray

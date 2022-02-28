@@ -18,7 +18,6 @@ namespace FreenetTray {
         private static bool Has64BitJRE {
             get {
                 RegistryKey local64 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
-                RegistryKey currentUser = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64);
                 RegistryKey jreKey64 = local64.OpenSubKey(JRERegistryKey);
                 RegistryKey jreKey6410 = local64.OpenSubKey(JRE10RegistryKey);
                 if (jreKey64 != null && (string)jreKey64.GetValue(@"FakeKeyForFreenet") != @"true") {
@@ -26,7 +25,7 @@ namespace FreenetTray {
                 }
                 if (jreKey6410 != null) {
                     // create old style registry key to get the wrapper to work
-                    jreKey64 = currentUser.CreateSubKey(JRERegistryKey);
+                    jreKey64 = local64.CreateSubKey(JRERegistryKey);
                     // to distinguish from real entry, so we can keep it up to date over external Java updates (see above)
                     jreKey64.SetValue(@"FakeKeyForFreenet", @"true", RegistryValueKind.String);
                     jreKey64.SetValue(@"CurrentVersion",jreKey6410.GetValue(@"CurrentVersion") );
@@ -34,6 +33,10 @@ namespace FreenetTray {
                     jreKey64ForVersion.SetValue(
                         @"JavaHome",
                         jreKey6410.OpenSubKey(Convert.ToString(jreKey6410.GetValue(@"CurrentVersion"))).GetValue(@"JavaHome"),
+                        RegistryValueKind.ExpandString);
+                    jreKey64ForVersion.SetValue(
+                        @"RuntimeLib",
+                        jreKey6410.OpenSubKey(Convert.ToString(jreKey6410.GetValue(@"CurrentVersion"))).GetValue(@"RuntimeLib"),
                         RegistryValueKind.ExpandString);
                     return true;
                 }

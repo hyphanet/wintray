@@ -20,7 +20,7 @@ namespace FreenetTray {
                 RegistryKey local64 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
                 RegistryKey jreKey64 = local64.OpenSubKey(JRERegistryKey);
                 RegistryKey jreKey6410 = local64.OpenSubKey(JRE10RegistryKey);
-                if (jreKey64 != null || jreKey6410) {
+                if (jreKey64 != null || jreKey6410 != null) {
                     return true;
                 }
                 return false;

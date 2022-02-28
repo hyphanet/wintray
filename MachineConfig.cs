@@ -20,7 +20,7 @@ namespace FreenetTray {
                 RegistryKey local64 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64);
                 RegistryKey jreKey64 = local64.OpenSubKey(JRERegistryKey);
                 RegistryKey jreKey6410 = local64.OpenSubKey(JRE10RegistryKey);
-                if (jreKey64 != null && jreKey64.GetValue(@"FakeKeyForFreenet") != @"true") {
+                if (jreKey64 != null && (string)jreKey64.GetValue(@"FakeKeyForFreenet") != @"true") {
                     return true;
                 }
                 if (jreKey6410 != null) {
@@ -29,10 +29,10 @@ namespace FreenetTray {
                     // to distinguish from real entry, so we can keep it up to date over external Java updates (see above)
                     jreKey64.SetValue(@"FakeKeyForFreenet", @"true", RegistryValueKind.String);
                     jreKey64.SetValue(@"CurrentVersion",jreKey6410.GetValue(@"CurrentVersion") );
-                    RegistryKey jreKey64ForVersion = jreKey64.CreateSubKey(jreKey6410.GetValue(@"CurrentVersion"));
+                    RegistryKey jreKey64ForVersion = jreKey64.CreateSubKey((string)jreKey6410.GetValue(@"CurrentVersion"));
                     jreKey64ForVersion.SetValue(
                         @"JavaHome",
-                        jreKey6410.OpenSubKey(jreKey6410.GetValue(@"CurrentVersion")).GetValue(@"JavaHome"),
+                        jreKey6410.OpenSubKey(Convert.ToString(jreKey6410.GetValue(@"CurrentVersion"))).GetValue(@"JavaHome"),
                         RegistryValueKind.ExpandString);
                     return true;
                 }

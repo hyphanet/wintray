@@ -42,7 +42,7 @@ them together.
 You will need to install:
 
 * Visual Studio 2017 (older versions should work, but 2017 is recommended, it's also free)
-* .NET 4.0 targeting pack
+* .NET 4.5.2 targeting pack
 
 Then click Build in Visual Studio, it should restore the nuget packages and build the release.
 

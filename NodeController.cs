@@ -253,8 +253,13 @@ namespace FreenetTray
                  */
                 PidFilename = "freenet.pid";
                 // wrapper.conf is relative to the wrapper's location.
-                var wrapperDir = Directory.GetParent(Path.Combine(relativeTo, WrapperFilename()));
-                foreach (var line in File.ReadAllLines(wrapperDir.FullName + '\\' + WrapperConfFilename))
+                var wrapperConfPath = Path.Combine(relativeTo, "wrapper", WrapperConfFilename);
+
+                // check JVM (version and architecture) and 
+                // adjust launch parameters for used JVM version
+                MachineConfig.CheckConfig(wrapperConfPath);
+
+                foreach (var line in File.ReadAllLines(wrapperConfPath))
                 {
                     // TODO: Map between constants and variables to reduce repetition?
                     if (Defines(line, "wrapper.logfile"))

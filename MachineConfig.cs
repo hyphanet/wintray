@@ -33,7 +33,7 @@ namespace FreenetTray {
             {
                 string line = lines[i];
 
-                /*
+                /* ================================
                  * CHECK AND RUN JAVA COMMAND
                  * 
                  */
@@ -62,7 +62,7 @@ namespace FreenetTray {
                 }
 
 
-                /*
+                /* ================================
                  * ENABLE OR DISABLE LAUNCH PARAMETERS FOR JAVA8 OR JAVA 9+
                  * 
                  */
@@ -98,6 +98,36 @@ namespace FreenetTray {
 
         private static void GetJVMinfo(string pathJVM)
         {
+
+            /* ================================
+             * Only run if the installer started tray.exe with "-welcome" arg.
+             * If OS did not have Java installed, the Freenet installer installed a JVM.
+             * This JVM's java.exe can be found in PATH.
+             * Problem: Installer starts tray.exe with old environment variables,
+             * meaning PATH does not contain Java.exe at this point.
+             * This results in "JVM not found" error.
+             * Solution: Read environment variables again.
+             * 
+             */
+            foreach (var arg in Environment.GetCommandLineArgs())
+            {
+                if( arg.Equals("-welcome") )
+                {
+                    string machineEnv = System.Environment.GetEnvironmentVariable("Path", EnvironmentVariableTarget.Machine);
+                    string currentEnv = System.Environment.GetEnvironmentVariable("Path");
+                    if( !machineEnv.Equals(currentEnv) )
+                    {
+                        System.Environment.SetEnvironmentVariable("Path", machineEnv);
+                    }
+                    break;
+                }
+            }
+
+
+            /* ================================
+             * RUN JAVA AND GET JVM INFO
+             * 
+             */
             using (System.Diagnostics.Process pProcess = new System.Diagnostics.Process())
             {
                 pProcess.StartInfo.FileName = pathJVM;

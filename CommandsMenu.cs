@@ -268,7 +268,7 @@ namespace FreenetTray
 
         private void ViewLogs()
         {
-			// start the standart editor
+            // start the standart editor
             Process.Start(_node.WrapperLogFilename);
         }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using Microsoft.Win32;
 
@@ -37,6 +38,18 @@ namespace FreenetTray.Browsers {
             _path = Path.Combine(Environment.GetEnvironmentVariable("windir"), "explorer.exe");
 
             _name = "Edge";
+        }
+
+        public override bool Open(Uri target)
+        {
+            if (!IsAvailable())
+            {
+                return false;
+            }
+
+            // Edge needs qoutes around the argument
+            Process.Start(_path, string.Format("\"{0}\"", _args + target));
+            return true;
         }
 
     }

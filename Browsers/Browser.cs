@@ -71,7 +71,7 @@ namespace FreenetTray.Browsers {
             return _path;
         }
 
-        public bool Open(Uri target) {
+        public virtual bool Open(Uri target) {
             if (!IsAvailable()) {
                 return false;
             }

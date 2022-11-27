@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using Microsoft.Win32;
 
 namespace FreenetTray.Browsers
@@ -7,6 +9,10 @@ namespace FreenetTray.Browsers
     class InternetExplorer: Browser
     {
         private static string IERegistryKey = @"Software\Microsoft\Internet Explorer";
+        private static readonly string[] Locations = {
+                                                 @"%PROGRAMFILES%\internet explorer",
+                                                 @"%PROGRAMFILES(X86)%\internet explorer",
+                                               };
 
         public InternetExplorer()
         {
@@ -26,8 +32,12 @@ namespace FreenetTray.Browsers
                 }
             }
 
-            // TODO: Also check for existence of executable?
-            _isInstalled = _version != null;
+            _path = Locations
+                .Select(location => Environment.ExpandEnvironmentVariables(location) + @"\iexplore.exe")
+                .Where(File.Exists)
+                .FirstOrDefault();
+
+            _isInstalled = _path != null;
 
             // See https://en.wikipedia.org/wiki/Internet_Explorer_8#InPrivate
             _isUsable = _version >= new Version(8, 0);

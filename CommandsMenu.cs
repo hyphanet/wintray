@@ -268,7 +268,8 @@ namespace FreenetTray
 
         private void ViewLogs()
         {
-            Process.Start("notepad.exe", _node.WrapperLogFilename);
+            // start the standart editor
+            Process.Start(_node.WrapperLogFilename);
         }
 
         private void RefreshMenu(bool running)

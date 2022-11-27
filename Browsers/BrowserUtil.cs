@@ -15,7 +15,8 @@ namespace FreenetTray.Browsers
             new Chrome(),
             new Firefox(),
             new Opera(),
-            // All systems should have Internet Explorer, so check it last.
+            // All Windows 10 systems should have Edge older systems should have Internet Explorer, so check it last.
+            new Edge(),
             new InternetExplorer(),
         };
 

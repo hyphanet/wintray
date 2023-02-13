@@ -62,27 +62,27 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="crashMessageLabel.Text" xml:space="preserve">
-    <value>Freenet crashed! See the log file for details. For help you can ask people on the support chat or mailing list.</value>
+    <value>Freenet がクラッシュしました！詳細はログファイルを参照してください。サポートチャットやメーリングリストで質問し、助言を得ることもできます。</value>
   </data>
   <data name="ViewLogButton.Text" xml:space="preserve">
-    <value>View log file</value>
+    <value>ログファイルを見る</value>
   </data>
   <data name="SupportChatButton.Text" xml:space="preserve">
-    <value>Open support chat</value>
+    <value>サポートチャットを開く</value>
   </data>
   <data name="MailingListButton.Text" xml:space="preserve">
-    <value>Open mailing list</value>
+    <value>メーリングリストを開く</value>
   </data>
   <data name="RestartButton.Text" xml:space="preserve">
-    <value>Restart</value>
+    <value>再起動する</value>
   </data>
   <data name="CloseButton.Text" xml:space="preserve">
-    <value>Close</value>
+    <value>閉じる</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.Text" xml:space="preserve">
-    <value>Freenet Crashed</value>
+    <value>Freenet がクラッシュしました</value>
   </data>
   </root>

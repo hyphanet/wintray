@@ -118,30 +118,30 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdditionalCrashInfo" xml:space="preserve">
-    <value>The following details will help people provide support:</value>
+    <value>以下に示す詳細は、人々の助言の参考になるでしょう:</value>
   </data>
   <data name="ChooseCustomLocation" xml:space="preserve">
-    <value>Choose the folder Freenet is installed to.</value>
+    <value>Freenet がインストールされているフォルダを選択してください。</value>
   </data>
   <data name="FreenetStarting" xml:space="preserve">
-    <value>Freenet is starting.</value>
+    <value>Freenet は起動中です。</value>
   </data>
   <data name="JRENotFound" xml:space="preserve">
-    <value>No Java runtime is available</value>
+    <value>使用可能な Java ランタイムがありません</value>
   </data>
   <data name="MalformedConfig" xml:space="preserve">
-    <value>The configuration file '{0}' does not contain a valid value for '{1}'.</value>
+    <value>設定ファイル '{0}' は '{1}' における有効な設定を持っていません。</value>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path is too long. Please install Freenet to a folder with a shorter path.</value>
+    <value>パスが長すぎます。もっと短いパスのフォルダに Freenet をインストールしてください。</value>
   </data>
   <data name="UnknownWrapperLaunchErrorTitle" xml:space="preserve">
-    <value>Unknown Error</value>
+    <value>不明なエラー</value>
   </data>
   <data name="WelcomeTip" xml:space="preserve">
-    <value>This tray icon controls Freenet. Left-click opens Freenet and right-click opens a menu.</value>
+    <value>このトレイアイコンは Freenet を操作します。左クリックすると Freenet を、右クリックするとメニューを開きます。</value>
   </data>
   <data name="WrapperFileNotFound" xml:space="preserve">
-    <value>Wrapper executable was not found at '{0}'.</value>
+    <value>'{0}' にラッパー実行ファイルが見当たりませんでした。</value>
   </data>
 </root>

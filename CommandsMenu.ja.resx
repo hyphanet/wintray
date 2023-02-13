@@ -67,28 +67,28 @@
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="openFreenetMenuItem.Text" xml:space="preserve">
-    <value>Open Freenet</value>
+    <value>Freenet を開く</value>
   </data>
   <data name="startFreenetMenuItem.Text" xml:space="preserve">
-    <value>Start Freenet</value>
+    <value>Freenet を起動する</value>
   </data>
   <data name="stopFreenetMenuItem.Text" xml:space="preserve">
-    <value>Stop Freenet</value>
+    <value>Freenet を停止する</value>
   </data>
   <data name="downloadsMenuItem.Text" xml:space="preserve">
-    <value>Downloads</value>
+    <value>ダウンロード</value>
   </data>
   <data name="viewLogsMenuItem.Text" xml:space="preserve">
-    <value>View log</value>
+    <value>ログを見る</value>
   </data>
   <data name="preferencesMenuItem.Text" xml:space="preserve">
-    <value>Preferences</value>
+    <value>設定</value>
   </data>
   <data name="hideIconMenuItem.Text" xml:space="preserve">
-    <value>Hide icon</value>
+    <value>アイコンを隠す</value>
   </data>
   <data name="exitMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
+    <value>終了</value>
   </data>
   <data name="trayIcon.Text" xml:space="preserve">
     <value>Freenet</value>
